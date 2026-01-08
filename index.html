@@ -46,7 +46,28 @@
 
         section {
             padding: 100px 0;
-            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        section::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(
+                to right,
+                transparent,
+                rgba(138, 168, 143, 0.2) 30%,
+                rgba(138, 168, 143, 0.2) 70%,
+                transparent
+            );
+        }
+
+        section:last-of-type::after {
+            display: none;
         }
 
         /* --- Header --- */
@@ -213,12 +234,15 @@
             padding: 40px;
             border-radius: 8px;
             border: 1px solid var(--border);
-            transition: var(--transition);
+            transition: all 0.15s ease;
+            cursor: pointer;
         }
 
         .card:hover {
             border-color: var(--accent);
             background: #1a1a1c;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(74, 93, 78, 0.1);
         }
 
         .card-num {
@@ -227,6 +251,29 @@
             color: var(--accent-light);
             margin-bottom: 24px;
             display: block;
+        }
+
+        /* Decision Architecture Flow */
+        .decision-flow {
+            position: relative;
+        }
+
+        .decision-flow .card {
+            position: relative;
+        }
+
+        @media (min-width: 769px) {
+            .decision-flow .card:not(:last-child)::before {
+                content: '→';
+                position: absolute;
+                right: -12px;
+                top: 50%;
+                transform: translate(100%, -50%);
+                color: var(--accent-light);
+                font-size: 1.5rem;
+                opacity: 0.3;
+                z-index: 1;
+            }
         }
 
         .card h3 {
@@ -302,8 +349,14 @@
         }
 
         .footer-links a {
-            color: var(--text-dim);
+            color: var(--text-main);
             text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
         }
 
         /* --- Mobile Responsiveness --- */
@@ -328,9 +381,51 @@
             margin-bottom: 8px;
             border: 1px solid var(--border);
         }
+
+        /* Mobile Sticky Call Bar */
+        .mobile-call-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: var(--accent);
+            padding: 16px 24px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.5);
+            transform: translateY(100%);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: none;
+        }
+
+        .mobile-call-bar.visible {
+            transform: translateY(0);
+        }
+
+        .mobile-call-bar a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-call-bar {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
+    <!-- Mobile Sticky Call Bar -->
+    <div class="mobile-call-bar" id="mobileCallBar">
+        <a href="tel:6477715063">
+            📞 Call Now: 647 771 5063
+        </a>
+    </div>
 
     <header>
         <div class="container nav-inner">
@@ -343,6 +438,7 @@
                 <a href="#refinance">Refinance</a>
                 <a href="#tool">Decision Tool</a>
                 <a href="#about">About</a>
+                <a href="tel:6477715063" class="btn btn-outline">647 771 5063</a>
                 <button class="btn btn-primary btn-newton">Review My Options</button>
             </nav>
         </div>
@@ -355,6 +451,7 @@
                 <div class="hero-content">
                     <span class="hero-label">Strategic Advisory</span>
                     <h1>Renewing or refinancing your mortgage?</h1>
+                    <p style="font-size: 0.95rem; color: var(--accent-light); margin-bottom: 20px; font-weight: 500;">Strategy before rates. Numbers before opinions.</p>
                     <p class="hero-sub">Get a clear strategy before you sign anything. Professional guidance to optimize your interest and cash flow.</p>
                     
                     <div class="hero-actions">
@@ -429,7 +526,7 @@
                     <h2>Decision Architecture</h2>
                     <p>Our secure intake process acts as a diagnostic tool to determine your best financial path.</p>
                 </div>
-                <div class="grid">
+                <div class="grid decision-flow">
                     <div class="card">
                         <span class="card-num">STEP 1</span>
                         <h3>Secure Intake</h3>
@@ -459,7 +556,8 @@
                     <div>
                         <span class="hero-label">The Advisor</span>
                         <h2 style="margin-bottom: 24px;">Ousmaan Ahmed</h2>
-                        <p style="font-size: 1.1rem; margin-bottom: 24px; color: var(--text-main);">Mortgage Agent Level 1</p>
+                        <p style="font-size: 1.1rem; margin-bottom: 8px; color: var(--text-main);">Mortgage Agent Level 1</p>
+                        <p style="font-size: 0.9rem; margin-bottom: 24px; color: var(--accent-light);">Licensed in Ontario. Independent advice.</p>
                         <p style="color: var(--text-dim); margin-bottom: 32px;">
                             My approach is rooted in strategy, not sales. Working with Silver Leaf Financial Group and Dominion Lending Centres, I provide clients with institutional-grade mortgage advice that prioritizes long-term wealth over short-term bank profits.
                         </p>
@@ -470,13 +568,13 @@
         </section>
 
         <!-- Contact/CTA Section -->
-        <section style="text-align: center; background: var(--accent);">
+        <section style="text-align: center; background: linear-gradient(135deg, var(--accent) 0%, rgba(74, 93, 78, 0.85) 100%); padding: 90px 0;">
             <div class="container">
                 <h2 style="font-size: 2.5rem; margin-bottom: 24px;">Ready to start?</h2>
                 <p style="margin-bottom: 40px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
                     Access the Newton Velocity secure portal to submit your details. It is the fastest way to receive a formal analysis.
                 </p>
-                <button class="btn btn-newton" style="background: white; color: var(--accent); padding: 18px 48px; font-size: 1rem;">Open Secure Intake</button>
+                <button class="btn btn-newton" style="background: white; color: #2a3d2e; padding: 18px 48px; font-size: 1rem; font-weight: 700;">Open Secure Intake</button>
             </div>
         </section>
     </main>
@@ -487,6 +585,7 @@
                 <div class="brand">
                     <span class="brand-name" style="color: white;">Ousmaan Mortgages</span>
                     <span class="brand-tag">Strategic Mortgage Advisory</span>
+                    <a href="tel:6477715063" style="color: var(--text-main); display: block; margin-top: 16px; font-size: 1rem; text-decoration: none;">647 771 5063</a>
                 </div>
                 <div class="footer-links">
                     <a href="#renewal">Renewal</a>
@@ -500,7 +599,7 @@
                 <p style="margin-top: 12px; opacity: 0.5;">
                     Disclaimer: This website is for informational purposes only. Information is subject to change without notice. Guaranteed approval, specific rates, or terms are not implied. All mortgage applications are subject to lender credit approval and property appraisal.
                 </p>
-                <p style="margin-top: 24px;">© <span id="year"></span> Ousmaan Mortgages. All rights reserved.</p>
+                <p style="margin-top: 40px;">© <span id="year"></span> Ousmaan Mortgages. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -518,6 +617,23 @@
 
         // Set Current Year
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Sticky Call Bar on Scroll
+        let lastScroll = 0;
+        const mobileCallBar = document.getElementById('mobileCallBar');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            // Show after scrolling down 300px
+            if (currentScroll > 300) {
+                mobileCallBar.classList.add('visible');
+            } else {
+                mobileCallBar.classList.remove('visible');
+            }
+
+            lastScroll = currentScroll;
+        });
 
         // Smooth Scroll (already handled by CSS, but good for mobile nav closers)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
