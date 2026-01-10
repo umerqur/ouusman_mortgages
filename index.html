@@ -531,6 +531,10 @@
             background-size: cover;
         }
 
+        #first-home-buyers {
+            scroll-margin-top: 110px;
+        }
+
         .fhb-form-container {
             max-width: 600px;
             margin: 0 auto;
@@ -691,7 +695,7 @@
                     </div>
 
                     <div class="hero-micro-cta">
-                        <a href="#first-home-buyers" class="micro-link fhb-cta-link">
+                        <a href="/#first-home-buyers" class="micro-link fhb-cta-link">
                             First time buyer + FHSA → Get the 3 step plan
                         </a>
                         <div class="micro-subtext">
@@ -723,7 +727,7 @@
                         <li>FHSA guidance and simple next steps</li>
                     </ul>
 
-                    <a class="btn btn-primary fhb-section-cta" href="#first-home-buyers">Start First Time Buyer Review</a>
+                    <a class="btn btn-primary fhb-section-cta" href="/#first-home-buyers">Start First Time Buyer Review</a>
                 </div>
             </div>
         </section>
@@ -841,7 +845,7 @@
         </section>
 
         <!-- First Time Home Buyer Landing Page -->
-        <section id="first-home-buyers" class="fhb-landing">
+        <section id="first-home-buyers" class="fhb-section fhb-landing">
             <div class="container">
                 <div class="fhb-form-container">
                     <span class="hero-label">FIRST TIME HOME BUYER</span>
@@ -1015,7 +1019,7 @@
                     <a href="tel:6477715063" style="color: var(--text); display: block; margin-top: 16px; font-size: 1rem; text-decoration: none;">647 771 5063</a>
                 </div>
                 <div class="footer-links">
-                    <a href="#first-home-buyers">First Time Buyers</a>
+                    <a href="/#first-home-buyers">First Time Buyers</a>
                     <a href="#renewal">Renewal</a>
                     <a href="#refinance">Refinance</a>
                     <a href="#about">About</a>
@@ -1063,15 +1067,6 @@
             lastScroll = currentScroll;
         });
 
-        // Smooth Scroll (already handled by CSS, but good for mobile nav closers)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
 
         // FHB Tracking Events
         // Track FHB micro CTA click from hero
