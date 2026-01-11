@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ousmaan Ahmed | Mortgage Strategy Advisor</title>
-    <meta name="description" content="Premium mortgage strategy for renewals and refinancing. Silver Leaf Financial Group | Dominion Lending Centres.">
-    
+    <title>First Time Home Buyer | Ousmaan Mortgages</title>
+    <meta name="description" content="First time home buyer guidance. FHSA expertise, pre-approval strategy, and down payment planning with Ousmaan Ahmed.">
+
     <!-- Premium Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,7 +35,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+
         html { scroll-behavior: smooth; }
 
         body {
@@ -177,16 +177,6 @@
         }
 
         /* --- Hero Section --- */
-        .hero {
-            padding: 200px 0 120px;
-            background:
-                linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.78)),
-                url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2000') no-repeat center center;
-            background-size: cover;
-        }
-
-        .hero-content { max-width: 720px; }
-
         .hero-label {
             color: var(--text);
             opacity: 0.9;
@@ -214,33 +204,6 @@
             opacity: 0.85;
         }
 
-        .hero-actions {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 24px;
-        }
-
-        .hero-link {
-            color: var(--text);
-            text-decoration: none;
-            font-size: 0.9rem;
-            opacity: 0.75;
-            transition: var(--transition);
-            font-weight: 500;
-        }
-
-        .hero-link:hover {
-            opacity: 1;
-        }
-
-        .trust-line {
-            font-size: 0.8rem;
-            color: var(--text);
-            border-top: 1px solid var(--border);
-            padding-top: 24px;
-            display: block;
-        }
-
         /* --- Cards & Grid --- */
         .section-header {
             margin-bottom: 60px;
@@ -266,14 +229,18 @@
             border: 1px solid var(--border);
             box-shadow: 0 8px 24px rgba(0,0,0,0.06);
             transition: all 0.15s ease;
-            cursor: pointer;
         }
 
-        .card:hover {
-            border-color: var(--border-2);
-            background: var(--surface-2);
-            transform: translateY(-2px);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
         }
 
         .card-num {
@@ -291,7 +258,6 @@
             border: 1px solid var(--accent-soft);
         }
 
-        /* How We Help You Decide Flow */
         .decision-flow {
             position: relative;
         }
@@ -312,41 +278,6 @@
                 opacity: 0.3;
                 z-index: 1;
             }
-        }
-
-        .card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 16px;
-            font-weight: 600;
-        }
-
-        .card p {
-            color: var(--muted);
-            font-size: 0.95rem;
-            margin-bottom: 24px;
-        }
-
-        /* --- About Section --- */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .about-image {
-            aspect-ratio: 4/5;
-            background: var(--surface);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            position: relative;
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         /* --- Footer --- */
@@ -413,31 +344,6 @@
             filter: grayscale(100%);
         }
 
-        /* --- Mobile Responsiveness --- */
-        @media (max-width: 768px) {
-            .nav-links, .nav-inner .btn { display: none; }
-            section { padding: 80px 0; }
-            .hero { padding: 140px 0 80px; }
-            .hero-actions { flex-direction: column; }
-            .about-grid { grid-template-columns: 1fr; gap: 40px; }
-            .footer-top { flex-direction: column; gap: 40px; }
-            .card-num { font-size: 1.5rem; }
-            .card { padding: 36px; }
-        }
-
-        /* Micro-interactions */
-        .pill {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 100px;
-            background: var(--accent-soft);
-            font-size: 0.7rem;
-            color: var(--muted);
-            margin-right: 8px;
-            margin-bottom: 8px;
-            border: 1px solid var(--border);
-        }
-
         /* Mobile Sticky Call Bar */
         .mobile-call-bar {
             position: fixed;
@@ -473,9 +379,140 @@
             opacity: 0.9;
         }
 
+        /* --- FHB Landing Page --- */
+        .fhb-landing {
+            padding: 180px 0 100px;
+            background:
+                linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.85)),
+                url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=2000') no-repeat center center;
+            background-size: cover;
+        }
+
+        .fhb-form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .fhb-form {
+            background: var(--surface);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            margin-top: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--muted);
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text);
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .fhb-trust {
+            padding: 60px 0;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 32px;
+        }
+
+        .trust-badge {
+            text-align: center;
+        }
+
+        .trust-badge-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+            opacity: 0.7;
+        }
+
+        .trust-badge h4 {
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .trust-badge p {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .fhb-process {
+            padding: 80px 0;
+            background: var(--bg-2);
+        }
+
+        .fhb-faq {
+            padding: 80px 0;
+        }
+
+        .faq-item {
+            background: var(--surface);
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            margin-bottom: 16px;
+        }
+
+        .faq-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+
+        .faq-item p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- Mobile Responsiveness --- */
         @media (max-width: 768px) {
+            .nav-links, .nav-inner .btn { display: none; }
+            section { padding: 80px 0; }
+            .footer-top { flex-direction: column; gap: 40px; }
+            .card-num { font-size: 1.5rem; }
+            .card { padding: 36px; }
             .mobile-call-bar {
                 display: block;
+            }
+            .fhb-landing {
+                padding: 140px 0 80px;
+            }
+            .fhb-form {
+                padding: 28px;
+            }
+            .trust-badges {
+                gap: 28px;
             }
         }
     </style>
@@ -490,12 +527,14 @@
 
     <header>
         <div class="container nav-inner">
-            <div class="brand">
-                <span class="brand-name">Ousmaan Mortgages</span>
-                <span class="brand-tag">Strategy First Advisor</span>
-            </div>
+            <a href="/" style="text-decoration: none;">
+                <div class="brand">
+                    <span class="brand-name">Ousmaan Mortgages</span>
+                    <span class="brand-tag">Strategy First Advisor</span>
+                </div>
+            </a>
             <nav class="nav-links">
-                <a href="#tool">Decision Tool</a>
+                <a href="/">Home</a>
                 <a href="tel:6477715063" class="btn btn-outline">647 771 5063</a>
                 <button class="btn btn-primary btn-newton">Review My Options</button>
             </nav>
@@ -503,131 +542,168 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
+        <!-- First Time Home Buyer Landing Page -->
+        <section class="fhb-landing">
             <div class="container">
-                <div class="hero-content">
-                    <h1>Renewing or refinancing your mortgage?</h1>
-                    <p class="hero-sub">Strategy before rates. Professional guidance to optimize your position.</p>
+                <div class="fhb-form-container">
+                    <span class="hero-label">FIRST TIME HOME BUYER</span>
+                    <h1>First Time Home Buyer Review</h1>
+                    <p class="hero-sub">Get a clear budget, approval plan, and FHSA guidance in 1 quick review.</p>
 
-                    <div class="hero-actions">
-                        <button class="btn btn-primary btn-newton">Review My Options</button>
-                    </div>
+                    <form class="fhb-form" id="fhbForm">
+                        <div class="form-group">
+                            <label for="fhb-name">Full Name</label>
+                            <input type="text" id="fhb-name" name="name" required>
+                        </div>
 
-                    <a href="#tool" class="hero-link">Use the decision tool</a>
+                        <div class="form-group">
+                            <label for="fhb-phone">Phone Number</label>
+                            <input type="tel" id="fhb-phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fhb-email">Email Address</label>
+                            <input type="email" id="fhb-email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fhb-city">City</label>
+                            <input type="text" id="fhb-city" name="city" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fhb-timeline">Purchase Timeline</label>
+                            <select id="fhb-timeline" name="timeline" required>
+                                <option value="">Select timeline</option>
+                                <option value="0-3">0-3 months</option>
+                                <option value="3-6">3-6 months</option>
+                                <option value="6-12">6-12 months</option>
+                                <option value="12+">12+ months</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fhb-price">Estimated Price Range</label>
+                            <select id="fhb-price" name="price" required>
+                                <option value="">Select price range</option>
+                                <option value="300-400">$300k - $400k</option>
+                                <option value="400-500">$400k - $500k</option>
+                                <option value="500-600">$500k - $600k</option>
+                                <option value="600-750">$600k - $750k</option>
+                                <option value="750-1000">$750k - $1M</option>
+                                <option value="1000+">$1M+</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 12px;">Start the Review</button>
+
+                        <div style="text-align: center; margin-top: 20px;">
+                            <a href="tel:6477715063" class="btn btn-outline" style="width: 100%;">Call 647 771 5063</a>
+                        </div>
+                    </form>
                 </div>
             </div>
         </section>
 
-        <!-- Renewal Section -->
-        <section id="renewal">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Mortgage Renewal Strategy</h2>
-                    <p>Standard bank renewals often ignore market fluctuations. We analyze your position 120 days before expiry to ensure you aren't overpaying.</p>
-                </div>
-                <div class="grid">
-                    <div class="card">
-                        <span class="card-num">01</span>
-                        <h3>Lender Comparison</h3>
-                        <p>Access options beyond your current bank, including monoline lenders that offer superior features.</p>
-                        <div class="pill">Switching Math</div> <div class="pill">Rate Caps</div>
+        <!-- Trust Section -->
+        <section class="fhb-trust">
+            <div class="container" style="text-align: center;">
+                <h2>Why First Time Buyers Choose Us</h2>
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <div class="trust-badge-icon">✓</div>
+                        <h4>Licensed & Independent</h4>
+                        <p>Not tied to one bank</p>
                     </div>
-                    <div class="card">
-                        <span class="card-num">02</span>
-                        <h3>Long-term Interest</h3>
-                        <p>We calculate the total cost over 5 years, not just the monthly payment. Strategy over marketing.</p>
-                        <div class="pill">Total Cost Analysis</div>
+                    <div class="trust-badge">
+                        <div class="trust-badge-icon">✓</div>
+                        <h4>FHSA Expertise</h4>
+                        <p>Navigate tax savings properly</p>
                     </div>
-                    <div class="card">
-                        <span class="card-num">03</span>
-                        <h3>Seamless Transfer</h3>
-                        <p>Most renewals can be switched with zero out-of-pocket costs. We handle the transition details.</p>
-                        <button class="btn btn-outline btn-newton" style="width:100%">Analyze My Renewal</button>
+                    <div class="trust-badge">
+                        <div class="trust-badge-icon">✓</div>
+                        <h4>Strategy First</h4>
+                        <p>Budget before promises</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Refinance Section -->
-        <section id="refinance" style="background: var(--bg-2);">
+        <!-- 3 Step Process -->
+        <section class="fhb-process">
             <div class="container">
-                <div class="section-header">
-                    <h2>Equity & Refinancing</h2>
-                    <p>Unlocking equity is a precision maneuver. Whether for debt consolidation or investment, the structure matters more than the rate.</p>
+                <div class="section-header" style="text-align: center; margin: 0 auto;">
+                    <h2>Your Path to Home Ownership</h2>
+                    <p>A simple, clear process designed for first time buyers.</p>
                 </div>
-                <div class="grid">
-                    <div class="card" style="background: var(--bg);">
-                        <h3>Strategic Refinance</h3>
-                        <p>Consolidate high-interest debt into a single, manageable low-rate mortgage payment.</p>
-                        <button class="btn btn-primary btn-newton">Calculate Savings</button>
-                    </div>
-                    <div class="card" style="background: var(--bg);">
-                        <h3>Wealth Extraction</h3>
-                        <p>Unlock capital for property improvements or secondary investments with optimized tax positioning.</p>
-                        <button class="btn btn-outline btn-newton">Explore Options</button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Decision Tool -->
-        <section id="tool">
-            <div class="container">
-                <div class="section-header">
-                    <h2>How We Help You Decide</h2>
-                    <p>Our secure intake process acts as a diagnostic tool to determine your best financial path.</p>
-                </div>
-                <div class="grid decision-flow">
+                <div class="grid decision-flow" style="margin-top: 60px;">
                     <div class="card">
                         <span class="card-num">STEP 1</span>
-                        <h3>Secure Intake</h3>
-                        <p>Provide your current mortgage details via our encrypted Newton Velocity portal.</p>
+                        <h3>Budget Reality Check</h3>
+                        <p>We review your income, down payment, and debt to calculate your true buying power—not what the banks claim you can afford.</p>
                     </div>
                     <div class="card">
                         <span class="card-num">STEP 2</span>
-                        <h3>Audit & Review</h3>
-                        <p>We audit your current penalties against market savings to find the "Break-Even" point.</p>
+                        <h3>FHSA Strategy</h3>
+                        <p>Learn how to maximize your First Home Savings Account, avoid common mistakes, and structure your down payment properly.</p>
                     </div>
                     <div class="card">
                         <span class="card-num">STEP 3</span>
-                        <h3>Execution</h3>
-                        <p>Receive a formal recommendation: Stay, Switch, or Refinance. No guesswork.</p>
+                        <h3>Pre-Approval Plan</h3>
+                        <p>Get a strategic pre-approval that positions you as a serious buyer, not just another rate shopper.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section id="about" style="background: var(--bg); background-image: radial-gradient(900px 420px at 50% 0%, var(--accent-soft), transparent 60%), radial-gradient(700px 360px at 20% 20%, rgba(95,116,102,0.10), transparent 55%);">
+        <!-- FAQ Section -->
+        <section class="fhb-faq">
             <div class="container">
-                <div class="about-grid">
-                    <div class="about-image">
-                        <img src="/ousmaan1.png" alt="Ousmaan Ahmed" class="advisor-photo" />
+                <div class="section-header" style="text-align: center; margin: 0 auto;">
+                    <h2>Common Questions</h2>
+                </div>
+
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="faq-item">
+                        <h4>What is the minimum down payment for first time buyers?</h4>
+                        <p>For homes under $500k, you need 5% down. For homes $500k-$1M, it's 5% on the first $500k and 10% on the remainder. Over $1M requires 20% down.</p>
                     </div>
-                    <div>
-                        <span class="hero-label">The Advisor</span>
-                        <h2 style="margin-bottom: 24px;">Ousmaan Ahmed</h2>
-                        <p style="font-size: 1.1rem; margin-bottom: 8px; color: var(--text);">Mortgage Agent Level 1</p>
-                        <p style="font-size: 0.9rem; margin-bottom: 24px; color: var(--accent); opacity: 0.9;">Licensed in Ontario. Independent advice.</p>
-                        <p style="color: var(--muted); margin-bottom: 32px;">
-                            My approach is rooted in strategy, not sales. Working with Silver Leaf Financial Group and Dominion Lending Centres, I provide clients with institutional-grade mortgage advice that prioritizes long-term wealth over short-term bank profits.
-                        </p>
-                        <button class="btn btn-primary btn-newton">Begin Strategic Review</button>
+
+                    <div class="faq-item">
+                        <h4>How does the FHSA work?</h4>
+                        <p>The First Home Savings Account lets you contribute up to $8,000/year (max $40,000 total) with tax-deductible contributions. Withdrawals for a first home purchase are tax-free. We guide you through the setup and timing.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>What credit score do I need?</h4>
+                        <p>Most lenders require a minimum credit score of 650-680. We review your credit and advise on improvement strategies if needed before you apply.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>Should I get pre-approved before house hunting?</h4>
+                        <p>Yes. A strategic pre-approval shows sellers you're serious and gives you a clear budget. We ensure your pre-approval is structured to maximize your negotiating position.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>Do you charge fees to first time buyers?</h4>
+                        <p>No. Mortgage brokers are compensated by lenders when your mortgage funds. Our service is free to you, and there's no obligation.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact/CTA Section -->
+        <!-- Final CTA -->
         <section style="text-align: center; background: var(--bg); background-image: radial-gradient(900px 420px at 50% 0%, var(--accent-soft), transparent 60%), radial-gradient(700px 360px at 20% 20%, rgba(95,116,102,0.10), transparent 55%); padding: 104px 0; position: relative;">
             <div style="position: absolute; inset: 0; background: linear-gradient(135deg, var(--accent) 0%, rgba(81, 104, 91, 0.85) 100%); opacity: 0.15;"></div>
             <div class="container" style="position: relative; z-index: 1;">
-                <h2 style="font-size: 2.5rem; margin-bottom: 24px;">Ready to start?</h2>
+                <h2 style="font-size: 2.5rem; margin-bottom: 24px;">Start Your First Home Journey</h2>
                 <p style="margin-bottom: 40px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto; color: var(--text);">
-                    Access the Newton Velocity secure portal to submit your details. It is the fastest way to receive a formal analysis.
+                    Get clarity on budget, down payment, and FHSA strategy. No pressure, no obligation.
                 </p>
-                <button class="btn btn-newton" style="background: var(--accent); color: var(--bg); padding: 18px 48px; font-size: 1rem; font-weight: 700; box-shadow: 0 10px 24px rgba(0,0,0,0.35);">Open Secure Intake</button>
+                <a href="#fhbForm" class="btn" style="background: var(--accent); color: var(--bg); padding: 18px 48px; font-size: 1rem; font-weight: 700; box-shadow: 0 10px 24px rgba(0,0,0,0.35);">Complete the Review Form</a>
+                <div style="margin-top: 24px;">
+                    <a href="tel:6477715063" style="color: var(--text); text-decoration: none; opacity: 0.85; font-size: 0.95rem;">Or call 647 771 5063</a>
+                </div>
             </div>
         </section>
     </main>
@@ -652,10 +728,10 @@
                 </div>
                 <div class="footer-links">
                     <a href="/first-time-home-buyer.html">First Time Buyers</a>
-                    <a href="#renewal">Renewal</a>
-                    <a href="#refinance">Refinance</a>
-                    <a href="#about">About</a>
-                    <a href="#tool">Secure Portal</a>
+                    <a href="/#renewal">Renewal</a>
+                    <a href="/#refinance">Refinance</a>
+                    <a href="/#about">About</a>
+                    <a href="/#tool">Secure Portal</a>
                 </div>
             </div>
             <div class="compliance">
@@ -697,6 +773,40 @@
             }
 
             lastScroll = currentScroll;
+        });
+
+        // FHB form submission
+        document.getElementById('fhbForm')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Get form data
+            const formData = {
+                name: document.getElementById('fhb-name').value,
+                phone: document.getElementById('fhb-phone').value,
+                email: document.getElementById('fhb-email').value,
+                city: document.getElementById('fhb-city').value,
+                timeline: document.getElementById('fhb-timeline').value,
+                price: document.getElementById('fhb-price').value
+            };
+
+            // Track form submission
+            if (window.gtag) {
+                window.gtag('event', 'fhb_form_submit', {
+                    'event_category': 'FHB',
+                    'event_label': 'Form Submission',
+                    'value': 1
+                });
+            }
+
+            console.log('FHB Form Submit:', formData);
+
+            // Show success message
+            alert('Thank you! We\'ll contact you within 24 hours to schedule your First Time Buyer Review.');
+
+            // Redirect to Newton after submission
+            setTimeout(() => {
+                window.location.href = VELOCITY_URL;
+            }, 1000);
         });
     </script>
 </body>
