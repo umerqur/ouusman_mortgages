@@ -547,60 +547,44 @@
             <div class="container">
                 <div class="fhb-form-container">
                     <span class="hero-label">FIRST TIME HOME BUYER</span>
-                    <h1>First Time Home Buyer Review</h1>
-                    <p class="hero-sub">Get a clear budget, approval plan, and FHSA guidance in 1 quick review.</p>
+                    <h1>First Time Buyer Plan</h1>
+                    <p class="hero-sub">Budget, down payment, and incentives mapped to your timeline.</p>
 
-                    <form class="fhb-form" id="fhbForm">
-                        <div class="form-group">
-                            <label for="fhb-name">Full Name</label>
-                            <input type="text" id="fhb-name" name="name" required>
-                        </div>
+                    <div style="text-align: center; margin-top: 40px;">
+                        <a href="#fhbForm" class="btn btn-primary" style="padding: 18px 48px; font-size: 1rem;">Get My Plan</a>
+                        <p style="margin-top: 16px; font-size: 0.85rem; color: var(--muted); opacity: 0.8;">Free review. No obligation. 15 minutes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                        <div class="form-group">
-                            <label for="fhb-phone">Phone Number</label>
-                            <input type="tel" id="fhb-phone" name="phone" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="fhb-email">Email Address</label>
-                            <input type="email" id="fhb-email" name="email" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="fhb-city">City</label>
-                            <input type="text" id="fhb-city" name="city" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="fhb-timeline">Purchase Timeline</label>
-                            <select id="fhb-timeline" name="timeline" required>
-                                <option value="">Select timeline</option>
-                                <option value="0-3">0-3 months</option>
-                                <option value="3-6">3-6 months</option>
-                                <option value="6-12">6-12 months</option>
-                                <option value="12+">12+ months</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="fhb-price">Estimated Price Range</label>
-                            <select id="fhb-price" name="price" required>
-                                <option value="">Select price range</option>
-                                <option value="300-400">$300k - $400k</option>
-                                <option value="400-500">$400k - $500k</option>
-                                <option value="500-600">$500k - $600k</option>
-                                <option value="600-750">$600k - $750k</option>
-                                <option value="750-1000">$750k - $1M</option>
-                                <option value="1000+">$1M+</option>
-                            </select>
-                        </div>
-
-                        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 12px;">Start the Review</button>
-
-                        <div style="text-align: center; margin-top: 20px;">
-                            <a href="tel:6477715063" class="btn btn-outline" style="width: 100%;">Call 647 771 5063</a>
-                        </div>
-                    </form>
+        <!-- Incentives Section -->
+        <section style="padding: 80px 0; background: var(--bg-2);">
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin: 0 auto;">
+                    <h2>Programs That Apply To You</h2>
+                    <p>First time buyers have access to unique incentives and strategies.</p>
+                </div>
+                <div class="grid" style="margin-top: 60px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                    <div class="card" style="padding: 32px;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 12px;">FHSA</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 0;">Tax-deductible contributions up to $8k/year. Tax-free withdrawal for your first home.</p>
+                    </div>
+                    <div class="card" style="padding: 32px;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 12px;">HBP</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 0;">Withdraw up to $60k from RRSP for down payment. Repay over 15 years.</p>
+                    </div>
+                    <div class="card" style="padding: 32px;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 12px;">Land Transfer Tax Rebate</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 0;">Ontario rebates up to $4,000 on land transfer tax for eligible first time buyers.</p>
+                    </div>
+                    <div class="card" style="padding: 32px;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 12px;">Insured Mortgage Options</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 0;">Access to insured mortgages with as little as 5% down payment.</p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 48px;">
+                    <a href="#fhbForm" class="btn btn-primary">See What Applies To Me</a>
                 </div>
             </div>
         </section>
@@ -692,6 +676,88 @@
             </div>
         </section>
 
+        <!-- 2-Step Form Section -->
+        <section id="fhbForm" style="padding: 80px 0; background: var(--bg-2);">
+            <div class="container">
+                <div class="fhb-form-container">
+                    <div style="text-align: center; margin-bottom: 40px;">
+                        <h2>Get Your First Time Buyer Plan</h2>
+                        <p class="hero-sub" style="margin-bottom: 0;">Start with your contact info and timeline.</p>
+                    </div>
+
+                    <!-- Step 1 Form -->
+                    <div id="step1Container" class="fhb-form">
+                        <form id="step1Form">
+                            <div class="form-group">
+                                <label for="fhb-contact">Phone or Email</label>
+                                <input type="text" id="fhb-contact" name="contact" placeholder="647-123-4567 or email@example.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fhb-timeline">Purchase Timeline</label>
+                                <select id="fhb-timeline" name="timeline" required>
+                                    <option value="">Select timeline</option>
+                                    <option value="0-3">0-3 months</option>
+                                    <option value="3-6">3-6 months</option>
+                                    <option value="6-12">6-12 months</option>
+                                    <option value="12+">12+ months</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 12px;">Get My Plan</button>
+                        </form>
+                    </div>
+
+                    <!-- Success State -->
+                    <div id="successState" class="fhb-form" style="display: none; text-align: center;">
+                        <div style="margin-bottom: 32px;">
+                            <div style="font-size: 3rem; margin-bottom: 16px; opacity: 0.7;">✓</div>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 16px; font-weight: 600;">Thanks. We will text you within 24 hours.</h3>
+                        </div>
+
+                        <a href="https://velocity-client.newton.ca/en/client/journey/home?shortCode=1w3bhezc8rjqi" class="btn btn-primary" style="width: 100%; margin-bottom: 16px;">Continue in Secure Portal</a>
+
+                        <div style="margin-top: 20px;">
+                            <a href="tel:6477715063" style="color: var(--muted); text-decoration: none; font-size: 0.95rem;">Or call 647 771 5063</a>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 Form (Optional - for future use if needed) -->
+                    <div id="step2Container" class="fhb-form" style="display: none;">
+                        <div style="text-align: center; margin-bottom: 24px;">
+                            <p style="color: var(--muted); font-size: 0.9rem;">Optional: Help us prepare better</p>
+                        </div>
+                        <form id="step2Form">
+                            <div class="form-group">
+                                <label for="fhb-name">Full Name</label>
+                                <input type="text" id="fhb-name" name="name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fhb-city">City</label>
+                                <input type="text" id="fhb-city" name="city">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fhb-price">Estimated Price Range</label>
+                                <select id="fhb-price" name="price">
+                                    <option value="">Select price range</option>
+                                    <option value="300-400">$300k - $400k</option>
+                                    <option value="400-500">$400k - $500k</option>
+                                    <option value="500-600">$500k - $600k</option>
+                                    <option value="600-750">$600k - $750k</option>
+                                    <option value="750-1000">$750k - $1M</option>
+                                    <option value="1000+">$1M+</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 12px;">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Final CTA -->
         <section style="text-align: center; background: var(--bg); background-image: radial-gradient(900px 420px at 50% 0%, var(--accent-soft), transparent 60%), radial-gradient(700px 360px at 20% 20%, rgba(95,116,102,0.10), transparent 55%); padding: 104px 0; position: relative;">
             <div style="position: absolute; inset: 0; background: linear-gradient(135deg, var(--accent) 0%, rgba(81, 104, 91, 0.85) 100%); opacity: 0.15;"></div>
@@ -775,38 +841,59 @@
             lastScroll = currentScroll;
         });
 
-        // FHB form submission
-        document.getElementById('fhbForm')?.addEventListener('submit', (e) => {
+        // Step 1 Form Submission
+        document.getElementById('step1Form')?.addEventListener('submit', (e) => {
             e.preventDefault();
 
             // Get form data
             const formData = {
-                name: document.getElementById('fhb-name').value,
-                phone: document.getElementById('fhb-phone').value,
-                email: document.getElementById('fhb-email').value,
-                city: document.getElementById('fhb-city').value,
-                timeline: document.getElementById('fhb-timeline').value,
-                price: document.getElementById('fhb-price').value
+                contact: document.getElementById('fhb-contact').value,
+                timeline: document.getElementById('fhb-timeline').value
             };
 
             // Track form submission
             if (window.gtag) {
-                window.gtag('event', 'fhb_form_submit', {
+                window.gtag('event', 'fhb_step1_submit', {
                     'event_category': 'FHB',
-                    'event_label': 'Form Submission',
+                    'event_label': 'Step 1 Submission',
                     'value': 1
                 });
             }
 
-            console.log('FHB Form Submit:', formData);
+            console.log('FHB Step 1 Submit:', formData);
 
-            // Show success message
-            alert('Thank you! We\'ll contact you within 24 hours to schedule your First Time Buyer Review.');
+            // Hide Step 1 form and show success state (NO REDIRECT)
+            document.getElementById('step1Container').style.display = 'none';
+            document.getElementById('successState').style.display = 'block';
 
-            // Redirect to Newton after submission
-            setTimeout(() => {
-                window.location.href = VELOCITY_URL;
-            }, 1000);
+            // Smooth scroll to success state
+            document.getElementById('successState').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+
+        // Optional: Step 2 Form Submission (if user wants to provide more info)
+        document.getElementById('step2Form')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('fhb-name').value,
+                city: document.getElementById('fhb-city').value,
+                price: document.getElementById('fhb-price').value
+            };
+
+            // Track step 2 submission
+            if (window.gtag) {
+                window.gtag('event', 'fhb_step2_submit', {
+                    'event_category': 'FHB',
+                    'event_label': 'Step 2 Submission',
+                    'value': 1
+                });
+            }
+
+            console.log('FHB Step 2 Submit:', formData);
+
+            // Show success state
+            document.getElementById('step2Container').style.display = 'none';
+            document.getElementById('successState').style.display = 'block';
         });
     </script>
 </body>
