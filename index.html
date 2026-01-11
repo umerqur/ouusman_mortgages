@@ -379,41 +379,96 @@
 
         /* --- Footer --- */
         footer {
-            padding: 80px 0;
-            background: var(--bg-2);
-            background-image:
-                radial-gradient(900px 420px at 50% 0%, var(--accent-soft), transparent 60%),
-                radial-gradient(700px 360px at 20% 20%, rgba(95,116,102,0.10), transparent 55%);
-            font-size: 0.8rem;
+            padding: 40px 0 24px;
+            background: #fafaf9;
+            border-top: 1px solid var(--border);
+            font-size: 0.875rem;
             color: var(--muted);
         }
 
-        .footer-top {
+        .footer-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .footer-left {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 60px;
+            flex-direction: column;
+            gap: 8px;
         }
 
-        .compliance {
-            max-width: 600px;
-            line-height: 1.8;
+        .footer-brand {
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            color: var(--text);
+            margin-bottom: 4px;
         }
 
-        .footer-links {
-            display: flex;
-            gap: 40px;
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 8px;
         }
 
-        .footer-links a {
+        .footer-contact {
             color: var(--text);
             text-decoration: none;
-            opacity: 0.8;
+            font-size: 0.9rem;
+            opacity: 0.85;
             transition: opacity 0.2s ease;
         }
 
-        .footer-links a:hover {
+        .footer-contact:hover {
             opacity: 1;
+        }
+
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .footer-right a {
+            color: var(--text);
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 0.9rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .footer-right a:hover {
+            opacity: 1;
+        }
+
+        .footer-compliance {
+            padding: 24px 0 20px;
+            max-width: 800px;
+        }
+
+        .compliance-license {
+            font-size: 0.75rem;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .compliance-disclaimer {
+            font-size: 0.7rem;
+            color: var(--muted);
+            opacity: 0.65;
+            line-height: 1.6;
+        }
+
+        .footer-copyright {
+            padding-top: 16px;
+            font-size: 0.75rem;
+            color: var(--muted);
+            opacity: 0.6;
         }
 
         /* --- Mobile Responsiveness --- */
@@ -427,7 +482,7 @@
                 gap: 20px;
             }
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
-            .footer-top { flex-direction: column; gap: 40px; }
+            .footer-columns { grid-template-columns: 1fr; gap: 32px; }
             .card-num { font-size: 1.5rem; }
             .card { padding: 36px; }
         }
@@ -662,13 +717,14 @@
 
     <footer>
         <div class="container">
-            <div class="footer-top">
-                <div class="brand">
-                    <span class="brand-name" style="color: white;">Ousmaan Mortgages</span>
-                    <span class="brand-tag">Strategic Mortgage Advisory</span>
-                    <a href="tel:6477715063" style="color: var(--text); display: block; margin-top: 16px; font-size: 1rem; text-decoration: none;">647 771 5063</a>
+            <div class="footer-columns">
+                <div class="footer-left">
+                    <div class="footer-brand">OUSMAAN MORTGAGES</div>
+                    <div class="footer-tagline">Strategy first advisory</div>
+                    <a href="tel:6477715063" class="footer-contact">647 771 5063</a>
+                    <a href="mailto:ousmaan@silverdlc.com" class="footer-contact">ousmaan@silverdlc.com</a>
                 </div>
-                <div class="footer-links">
+                <div class="footer-right">
                     <a href="/first-time-home-buyer.html">First Time Buyers</a>
                     <a href="#renewal">Renewal</a>
                     <a href="#refinance">Refinance</a>
@@ -676,12 +732,14 @@
                     <a href="#tool">Secure Portal</a>
                 </div>
             </div>
-            <div class="compliance">
-                <p>Ousmaan Ahmed | Mortgage Agent Level 1 | Silver Leaf Financial Group | Dominion Lending Centres</p>
-                <p style="margin-top: 12px; opacity: 0.5;">
+            <div class="footer-compliance">
+                <p class="compliance-license">Ousmaan Ahmed | Mortgage Agent Level 1 | Silver Leaf Financial Group | Dominion Lending Centres<br>License #M25002486</p>
+                <p class="compliance-disclaimer">
                     Disclaimer: This website is for informational purposes only. Information is subject to change without notice. Guaranteed approval, specific rates, or terms are not implied. All mortgage applications are subject to lender credit approval and property appraisal.
                 </p>
-                <p style="margin-top: 40px;">© <span id="year"></span> Ousmaan Mortgages. All rights reserved.</p>
+            </div>
+            <div class="footer-copyright">
+                © <span id="year"></span> Ousmaan Mortgages. All rights reserved.
             </div>
         </div>
     </footer>
