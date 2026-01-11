@@ -94,6 +94,19 @@
 
         .brand {
             display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .navbar-logo {
+            height: 30px;
+            width: auto;
+            filter: grayscale(100%);
+            opacity: 0.6;
+        }
+
+        .brand-text {
+            display: flex;
             flex-direction: column;
         }
 
@@ -404,31 +417,6 @@
             opacity: 1;
         }
 
-        /* --- Brokerage Affiliation --- */
-        .brokerage-affiliation {
-            margin-top: 32px;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 8px;
-            opacity: 0.7;
-            padding: 60px 0;
-            text-align: left;
-        }
-
-        .brokerage-label {
-            font-size: 0.75rem;
-            letter-spacing: 0.12em;
-            color: #6b7470;
-            text-transform: uppercase;
-        }
-
-        .brokerage-affiliation img {
-            max-height: 42px;
-            width: auto;
-            filter: grayscale(100%);
-        }
-
         /* --- Mobile Responsiveness --- */
         @media (max-width: 768px) {
             .nav-links, .nav-inner .btn { display: none; }
@@ -511,8 +499,11 @@
     <header>
         <div class="container nav-inner">
             <div class="brand">
-                <span class="brand-name">Ousmaan Mortgages</span>
-                <span class="brand-tag">Strategy First Advisor</span>
+                <img src="/SilverLeafFinancialGroup.jpg" alt="Silver Leaf Financial Group" class="navbar-logo" />
+                <div class="brand-text">
+                    <span class="brand-name">Ousmaan Mortgages</span>
+                    <span class="brand-tag">Strategy First Advisor</span>
+                </div>
             </div>
             <nav class="nav-links">
                 <a href="#tool">Decision Tool</a>
@@ -650,16 +641,6 @@
             </div>
         </section>
     </main>
-
-    <!-- Brokerage Affiliation -->
-    <section style="padding: 40px 0; background: var(--bg);">
-        <div class="container">
-            <div class="brokerage-affiliation">
-                <span class="brokerage-label">Brokerage Affiliation</span>
-                <img src="/SilverLeafFinancialGroup.jpg" alt="Silver Leaf Financial Group" />
-            </div>
-        </div>
-    </section>
 
     <footer>
         <div class="container">
