@@ -180,7 +180,7 @@
         .hero {
             padding: 200px 0 120px;
             background:
-                linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.85)),
+                linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.78)),
                 url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2000') no-repeat center center;
             background-size: cover;
         }
@@ -207,16 +207,30 @@
         }
 
         .hero-sub {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             color: var(--text);
-            margin-bottom: 40px;
-            font-weight: 300;
+            margin-bottom: 36px;
+            font-weight: 400;
+            opacity: 0.85;
         }
 
         .hero-actions {
             display: flex;
             gap: 16px;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
+        }
+
+        .hero-link {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.75;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .hero-link:hover {
+            opacity: 1;
         }
 
         .trust-line {
@@ -709,28 +723,14 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <span class="hero-label">Strategic Advisory</span>
                     <h1>Renewing or refinancing your mortgage?</h1>
-                    <p style="font-size: 0.95rem; color: var(--text); margin-bottom: 20px; font-weight: 500; opacity: 0.9;">Strategy before rates. Numbers before opinions.</p>
-                    <p class="hero-sub">Get a clear strategy before you sign anything. Professional guidance to optimize your interest and cash flow.</p>
-                    
+                    <p class="hero-sub">Strategy before rates. Professional guidance to optimize your position.</p>
+
                     <div class="hero-actions">
-                        <button class="btn btn-primary btn-newton">Review My Mortgage Options</button>
-                        <a href="#tool" class="btn btn-outline">Use Decision Tool</a>
+                        <button class="btn btn-primary btn-newton">Review My Options</button>
                     </div>
 
-                    <div class="hero-micro-cta">
-                        <a href="/#first-home-buyers" class="micro-link fhb-cta-link">
-                            First time buyer + FHSA → Get the 3 step plan
-                        </a>
-                        <div class="micro-subtext">
-                            Quick checklist, down payment math, and a clear next step.
-                        </div>
-                    </div>
-
-                    <div class="trust-line">
-                        <p><strong>Secure application. No obligation. Takes 2 to 3 minutes.</strong></p>
-                    </div>
+                    <a href="#tool" class="hero-link">Use the decision tool</a>
                 </div>
             </div>
         </section>
