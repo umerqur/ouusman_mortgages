@@ -440,15 +440,37 @@
         /* --- FHB Landing Page --- */
         .fhb-landing {
             padding: 180px 0 100px;
-            background:
-                linear-gradient(rgba(255,255,255,0.65), rgba(255,255,255,0.85)),
-                url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=2000') no-repeat center center;
-            background-size: cover;
+            background: linear-gradient(
+                135deg,
+                #fafaf9 0%,
+                #f5f6f4 25%,
+                #f0f2ef 50%,
+                #eef1ed 75%,
+                #f2f4f1 100%
+            );
+            position: relative;
+        }
+
+        .fhb-landing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(
+                ellipse 1200px 600px at 50% 0%,
+                rgba(95, 116, 102, 0.04),
+                transparent 60%
+            );
+            pointer-events: none;
         }
 
         .fhb-form-container {
             max-width: 600px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .fhb-form {
