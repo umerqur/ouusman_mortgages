@@ -757,15 +757,38 @@
 
                     <!-- Step 1 Form -->
                     <div id="step1Container" class="fhb-form">
-                        <form id="step1Form">
+                        <form
+                            id="step1Form"
+                            name="first_time_buyer_plan"
+                            method="POST"
+                            data-netlify="true"
+                            data-netlify-honeypot="bot-field"
+                            action="/thank-you/first-time-buyer-plan"
+                        >
+                            <!-- Hidden Netlify form identifier -->
+                            <input type="hidden" name="form-name" value="first_time_buyer_plan" />
+
+                            <!-- Honeypot field for spam protection -->
+                            <input name="bot-field" class="hidden" style="display: none;" />
+
                             <div class="form-group">
-                                <label for="fhb-contact">Phone or Email</label>
-                                <input type="text" id="fhb-contact" name="contact" placeholder="647-123-4567 or email@example.com" required>
+                                <label for="fhb-fullName">Full Name</label>
+                                <input type="text" id="fhb-fullName" name="fullName" placeholder="John Doe" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fhb-phone">Phone Number</label>
+                                <input type="tel" id="fhb-phone" name="phone" placeholder="647-123-4567" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fhb-email">Email</label>
+                                <input type="email" id="fhb-email" name="email" placeholder="email@example.com" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="fhb-timeline">Purchase Timeline</label>
-                                <select id="fhb-timeline" name="timeline" required>
+                                <select id="fhb-timeline" name="purchaseTimeline" required>
                                     <option value="">Select timeline</option>
                                     <option value="0-3">0-3 months</option>
                                     <option value="3-6">3-6 months</option>
@@ -904,33 +927,21 @@
             lastScroll = currentScroll;
         });
 
-        // Step 1 Form Submission
+        // Netlify Form Submission (Native handling)
+        // The form now submits naturally to Netlify and redirects to /thank-you/first-time-buyer-plan
+        // Google Ads conversion tracking happens on the thank-you page
         document.getElementById('step1Form')?.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // Get form data
-            const formData = {
-                contact: document.getElementById('fhb-contact').value,
-                timeline: document.getElementById('fhb-timeline').value
-            };
-
-            // Track form submission
+            // Track form submission before Netlify redirect
             if (window.gtag) {
                 window.gtag('event', 'fhb_step1_submit', {
                     'event_category': 'FHB',
-                    'event_label': 'Step 1 Submission',
+                    'event_label': 'First Time Buyer Plan Form Submission',
                     'value': 1
                 });
             }
 
-            console.log('FHB Step 1 Submit:', formData);
-
-            // Hide Step 1 form and show success state (NO REDIRECT)
-            document.getElementById('step1Container').style.display = 'none';
-            document.getElementById('successState').style.display = 'block';
-
-            // Smooth scroll to success state
-            document.getElementById('successState').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            console.log('FHB Form Submitting to Netlify');
+            // Allow native form submission (no e.preventDefault())
         });
 
         // Optional: Step 2 Form Submission (if user wants to provide more info)
