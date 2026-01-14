@@ -472,6 +472,19 @@
             z-index: 2;
         }
 
+        /* Hero copy left aligned */
+        .fhb-hero-copy {
+            max-width: 600px;
+            margin-left: 0;
+        }
+
+        /* Keep form centered */
+        #fhbForm .fhb-form-container,
+        .fhb-form-container form {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         .fhb-form {
             background: var(--surface);
             padding: 40px;
@@ -703,14 +716,20 @@
         <section class="fhb-landing">
             <div class="container">
                 <div class="fhb-form-container">
-                    <span class="hero-label">FIRST TIME HOME BUYER</span>
-                    <h1>First Time Buyer Plan</h1>
-                    <p class="hero-sub">Budget, down payment, and incentives mapped to your timeline.</p>
 
-                    <div style="margin-top: 40px;">
-                        <a href="#fhbForm" class="btn btn-primary" style="padding: 18px 48px; font-size: 1rem;">Get My Plan</a>
-                        <p style="margin-top: 16px; font-size: 0.85rem; color: var(--muted); opacity: 0.8;">Free review. No obligation. 15 minutes.</p>
+                    <div class="fhb-hero-copy">
+                        <span class="hero-label">FIRST TIME HOME BUYER</span>
+                        <h1>First Time Buyer Plan</h1>
+                        <p class="hero-sub">Budget, down payment, and incentives mapped to your timeline.</p>
+
+                        <div style="margin-top: 32px;">
+                            <a href="#fhbForm" class="btn btn-primary" style="padding: 18px 48px; font-size: 1rem;">Get My Plan</a>
+                            <p style="margin-top: 12px; font-size: 0.85rem; color: var(--muted); opacity: 0.8;">
+                                Free review. No obligation. 15 minutes.
+                            </p>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </section>
