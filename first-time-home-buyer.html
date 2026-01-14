@@ -467,8 +467,7 @@
 
         .fhb-form-container {
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-left: 0;
             position: relative;
             z-index: 2;
         }
@@ -662,6 +661,12 @@
 
             .footer-contact {
                 font-size: 0.9rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .fhb-form-container {
+                margin-left: 0;
             }
         }
     </style>
