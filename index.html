@@ -13,16 +13,16 @@
 
     <style>
         :root {
-            /* Charcoal System */
-            --bg: #0E1113;
-            --bg-2: #12171A;
-            --surface: #141A1D;
-            --surface-2: #171F22;
-            --border: rgba(255,255,255,0.08);
-            --border-2: rgba(255,255,255,0.12);
-            --text: rgba(255,255,255,0.92);
-            --muted: rgba(255,255,255,0.70);
-            --muted-2: rgba(255,255,255,0.56);
+            /* Light System */
+            --bg: #f7f8f6;
+            --bg-2: #ffffff;
+            --surface: #ffffff;
+            --surface-2: #ffffff;
+            --border: rgba(0,0,0,0.06);
+            --border-2: rgba(0,0,0,0.06);
+            --text: #0f1412;
+            --muted: #4b5551;
+            --muted-2: #6b7470;
 
             /* Warm Sage Accent */
             --accent: #5F7466;
@@ -80,9 +80,9 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(14, 17, 19, 0.85);
+            background: #0f1412;
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
 
         .nav-inner {
@@ -94,6 +94,18 @@
 
         .brand {
             display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .navbar-logo {
+            height: 70px;
+            width: auto;
+            display: block;
+        }
+
+        .brand-text {
+            display: flex;
             flex-direction: column;
         }
 
@@ -102,11 +114,12 @@
             font-size: 1.1rem;
             letter-spacing: -0.02em;
             text-transform: uppercase;
+            color: rgba(255,255,255,0.95);
         }
 
         .brand-tag {
             font-size: 0.7rem;
-            color: var(--muted-2);
+            color: rgba(255,255,255,0.6);
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
@@ -119,13 +132,23 @@
 
         .nav-links a {
             text-decoration: none;
-            color: var(--muted);
+            color: rgba(255,255,255,0.75);
             font-size: 0.85rem;
             font-weight: 500;
             transition: var(--transition);
         }
 
-        .nav-links a:hover { color: var(--text); }
+        .nav-links a:hover { color: rgba(255,255,255,0.95); }
+
+        .nav-links .btn-outline {
+            border-color: rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.9);
+        }
+
+        .nav-links .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.3);
+        }
 
         /* --- Buttons --- */
         .btn {
@@ -161,15 +184,15 @@
         }
 
         .btn-outline:hover {
-            background: rgba(255,255,255,0.04);
-            border-color: var(--border-2);
+            background: rgba(0,0,0,0.02);
+            border-color: rgba(0,0,0,0.12);
         }
 
         /* --- Hero Section --- */
         .hero {
             padding: 200px 0 120px;
             background:
-                linear-gradient(rgba(14,17,19,0.7), rgba(14,17,19,0.9)),
+                linear-gradient(rgba(255,255,255,0.78), rgba(255,255,255,0.78)),
                 url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=2000') no-repeat center center;
             background-size: cover;
         }
@@ -177,7 +200,7 @@
         .hero-content { max-width: 720px; }
 
         .hero-label {
-            color: var(--accent);
+            color: var(--text);
             opacity: 0.9;
             text-transform: uppercase;
             letter-spacing: 0.2em;
@@ -196,21 +219,51 @@
         }
 
         .hero-sub {
-            font-size: 1.25rem;
-            color: var(--muted);
-            margin-bottom: 40px;
-            font-weight: 300;
+            font-size: 1.15rem;
+            color: var(--text);
+            margin-bottom: 36px;
+            font-weight: 400;
+            opacity: 0.85;
         }
 
         .hero-actions {
             display: flex;
-            gap: 16px;
-            margin-bottom: 32px;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .hero-link {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            opacity: 0.85;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--border-2);
+            padding-bottom: 2px;
+        }
+
+        .hero-link::after {
+            content: '→';
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .hero-link:hover {
+            opacity: 1;
+            border-bottom-color: var(--text);
+        }
+
+        .hero-link:hover::after {
+            transform: translateX(3px);
         }
 
         .trust-line {
             font-size: 0.8rem;
-            color: var(--muted);
+            color: var(--text);
             border-top: 1px solid var(--border);
             padding-top: 24px;
             display: block;
@@ -239,7 +292,7 @@
             padding: 48px;
             border-radius: 8px;
             border: 1px solid var(--border);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
             transition: all 0.15s ease;
             cursor: pointer;
         }
@@ -248,7 +301,7 @@
             border-color: var(--border-2);
             background: var(--surface-2);
             transform: translateY(-2px);
-            box-shadow: 0 12px 36px rgba(0,0,0,0.4);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
         }
 
         .card-num {
@@ -318,18 +371,6 @@
             position: relative;
         }
 
-        /* Placeholder for Headshot */
-        .about-image::before {
-            content: "Ousmaan Ahmed";
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            color: var(--muted-2);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
         .about-image img {
             width: 100%;
             height: 100%;
@@ -338,53 +379,164 @@
 
         /* --- Footer --- */
         footer {
-            padding: 80px 0;
-            background: var(--bg-2);
-            background-image:
-                radial-gradient(900px 420px at 50% 0%, var(--accent-soft), transparent 60%),
-                radial-gradient(700px 360px at 20% 20%, rgba(95,116,102,0.10), transparent 55%);
-            font-size: 0.8rem;
+            padding: 40px 0 24px;
+            background: #fafaf9;
+            border-top: 1px solid var(--border);
+            font-size: 0.875rem;
             color: var(--muted);
         }
 
-        .footer-top {
+        .footer-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .footer-left {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 60px;
+            flex-direction: column;
+            gap: 8px;
         }
 
-        .compliance {
-            max-width: 600px;
-            line-height: 1.8;
+        .footer-brand {
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            color: var(--text);
+            margin-bottom: 4px;
         }
 
-        .footer-links {
-            display: flex;
-            gap: 40px;
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 8px;
         }
 
-        .footer-links a {
+        .footer-contact {
             color: var(--text);
             text-decoration: none;
-            opacity: 0.8;
+            font-size: 0.9rem;
+            opacity: 0.85;
             transition: opacity 0.2s ease;
         }
 
-        .footer-links a:hover {
+        .footer-contact:hover {
             opacity: 1;
+        }
+
+        .footer-contact:visited {
+            color: var(--text);
+        }
+
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .footer-right a {
+            color: var(--text);
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 0.9rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .footer-right a:hover {
+            opacity: 1;
+        }
+
+        .footer-right a:visited {
+            color: var(--text);
+        }
+
+        .footer-right a:active {
+            color: var(--text);
+        }
+
+        .footer-compliance {
+            padding: 24px 0 20px;
+            max-width: 800px;
+        }
+
+        .compliance-license {
+            font-size: 0.75rem;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 12px;
+            pointer-events: none;
+            user-select: text;
+        }
+
+        .compliance-disclaimer {
+            font-size: 0.7rem;
+            color: var(--muted);
+            opacity: 0.65;
+            line-height: 1.6;
+            pointer-events: none;
+            user-select: text;
+        }
+
+        .footer-copyright {
+            padding-top: 16px;
+            font-size: 0.75rem;
+            color: var(--muted);
+            opacity: 0.6;
         }
 
         /* --- Mobile Responsiveness --- */
         @media (max-width: 768px) {
             .nav-links, .nav-inner .btn { display: none; }
+
+            /* Mobile navbar left alignment */
+            .nav-inner {
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .brand {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+
+            .brand-text {
+                text-align: left;
+            }
+
+            .brand-name {
+                text-align: left;
+            }
+
+            .brand-tag {
+                text-align: left;
+                font-size: 0.65rem;
+                line-height: 1.3;
+            }
+
             section { padding: 80px 0; }
             .hero { padding: 140px 0 80px; }
-            .hero-actions { flex-direction: column; }
+            .hero-actions {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
             .about-grid { grid-template-columns: 1fr; gap: 40px; }
-            .footer-top { flex-direction: column; gap: 40px; }
+            .footer-columns { grid-template-columns: 1fr; gap: 32px; }
             .card-num { font-size: 1.5rem; }
             .card { padding: 36px; }
+
+            /* Ensure footer links keep proper sizing on mobile */
+            .footer-right a {
+                font-size: 0.9rem;
+            }
+
+            .footer-contact {
+                font-size: 0.9rem;
+            }
         }
 
         /* Micro-interactions */
@@ -398,6 +550,27 @@
             margin-right: 8px;
             margin-bottom: 8px;
             border: 1px solid var(--border);
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: var(--surface);
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            margin-bottom: 16px;
+        }
+
+        .faq-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+
+        .faq-item p {
+            color: var(--muted);
+            font-size: 0.95rem;
         }
 
         /* Mobile Sticky Call Bar */
@@ -453,8 +626,11 @@
     <header>
         <div class="container nav-inner">
             <div class="brand">
-                <span class="brand-name">Ousmaan Mortgages</span>
-                <span class="brand-tag">Strategy First</span>
+                <img src="/SilverLeafFinancialGroup.png" alt="Silver Leaf Financial Group" class="navbar-logo" />
+                <div class="brand-text">
+                    <span class="brand-name">Ousmaan Mortgages</span>
+                    <span class="brand-tag">Strategy First Advisor</span>
+                </div>
             </div>
             <nav class="nav-links">
                 <a href="#tool">Decision Tool</a>
@@ -469,19 +645,12 @@
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
-                    <span class="hero-label">Strategic Advisory</span>
                     <h1>Renewing or refinancing your mortgage?</h1>
-                    <p style="font-size: 0.95rem; color: var(--accent); margin-bottom: 20px; font-weight: 500; opacity: 0.9;">Strategy before rates. Numbers before opinions.</p>
-                    <p class="hero-sub">Get a clear strategy before you sign anything. Professional guidance to optimize your interest and cash flow.</p>
-                    
+                    <p class="hero-sub">Strategy before rates. Professional guidance to optimize your position.</p>
+
                     <div class="hero-actions">
-                        <button class="btn btn-primary btn-newton">Review My Mortgage Options</button>
-                        <a href="#tool" class="btn btn-outline">Use Decision Tool</a>
-                    </div>
-                    
-                    <div class="trust-line">
-                        <p><strong>Secure application. No obligation. Takes 2 to 3 minutes.</strong></p>
-                        <p style="margin-top: 8px; opacity: 0.7;">Mortgage Agent Level 1 | Silver Leaf Financial Group | Dominion Lending Centres</p>
+                        <button class="btn btn-primary btn-newton">Review My Options</button>
+                        <a href="#tool" class="hero-link">Use the decision tool</a>
                     </div>
                 </div>
             </div>
@@ -498,8 +667,8 @@
                     <div class="card">
                         <span class="card-num">01</span>
                         <h3>Lender Comparison</h3>
-                        <p>Access options beyond your current bank, including monoline lenders that offer superior features.</p>
-                        <div class="pill">Switching Math</div> <div class="pill">Rate Caps</div>
+                        <p>Access options beyond your current bank, including specialized mortgage lenders that often offer more flexible terms.</p>
+                        <div class="pill">Compare Real Offers</div>
                     </div>
                     <div class="card">
                         <span class="card-num">02</span>
@@ -550,12 +719,12 @@
                     <div class="card">
                         <span class="card-num">STEP 1</span>
                         <h3>Secure Intake</h3>
-                        <p>Provide your current mortgage details via our encrypted Newton Velocity portal.</p>
+                        <p>Provide your current mortgage details via our secure application portal.</p>
                     </div>
                     <div class="card">
                         <span class="card-num">STEP 2</span>
                         <h3>Audit & Review</h3>
-                        <p>We audit your current penalties against market savings to find the "Break-Even" point.</p>
+                        <p>We calculate your mortgage penalty and compare it against long term interest savings. You get a clear answer on whether breaking your mortgage makes sense.</p>
                     </div>
                     <div class="card">
                         <span class="card-num">STEP 3</span>
@@ -566,18 +735,104 @@
             </div>
         </section>
 
+        <!-- Common Questions -->
+        <section style="padding: 80px 0;">
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin: 0 auto;">
+                    <h2>Common Questions</h2>
+                </div>
+
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="faq-item">
+                        <h4>Is this free or does it cost me anything?</h4>
+                        <p>No. Mortgage advice is paid for by the lender if you proceed. There is no cost to review your options or discuss strategy.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>Why not just renew with my bank?</h4>
+                        <p>Banks are not required to offer their best rate or structure. A review compares your renewal against real alternatives so you can decide with clarity.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>Will checking options affect my credit score?</h4>
+                        <p>No. Strategy discussions and scenario reviews do not impact your credit. A credit check only happens if you choose to proceed.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>What if refinancing does not make sense for me?</h4>
+                        <p>Then you are told exactly that. Sometimes the best move is to stay put. The goal is the right decision, not a transaction.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>How long does the review take?</h4>
+                        <p>Most reviews take about 15 minutes once your details are submitted.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- About Section -->
         <section id="about" style="background: var(--bg); background-image: radial-gradient(900px 420px at 50% 0%, var(--accent-soft), transparent 60%), radial-gradient(700px 360px at 20% 20%, rgba(95,116,102,0.10), transparent 55%);">
             <div class="container">
                 <div class="about-grid">
                     <div class="about-image">
-                        <img src="/ousmaan1.png" alt="Ousmaan Ahmed" class="advisor-photo" />
+                        <img src="/ousmaan1_v2.png" alt="Ousmaan Ahmed" class="advisor-photo" />
                     </div>
                     <div>
-                        <span class="hero-label">The Advisor</span>
-                        <h2 style="margin-bottom: 24px;">Ousmaan Ahmed</h2>
-                        <p style="font-size: 1.1rem; margin-bottom: 8px; color: var(--text);">Mortgage Agent Level 1</p>
-                        <p style="font-size: 0.9rem; margin-bottom: 24px; color: var(--accent); opacity: 0.9;">Licensed in Ontario. Independent advice.</p>
+                        <span class="hero-label">THE ADVISOR</span>
+                        <h2 style="margin-bottom: 16px;">Ousmaan Ahmed</h2>
+                        <p style="font-size: 1.05rem; margin-bottom: 8px; color: var(--text);">Mortgage Agent Level 1</p>
+                        <p style="font-size: 0.85rem; margin-bottom: 12px; color: var(--muted); opacity: 0.7;">License #M25002486</p>
+
+                        <div style="margin-bottom: 16px;">
+                            <a href="mailto:ousmaan@silverdlc.com" style="color: var(--accent); text-decoration: none; font-size: 0.95rem; display: inline-block; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">ousmaan@silverdlc.com</a>
+                        </div>
+
+                        <div style="display: flex; gap: 20px; align-items: center; margin-bottom: 32px;">
+                            <!-- Instagram Icon -->
+                            <a href="https://www.instagram.com/agentousmaan/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Follow us on Instagram"
+                               style="display: inline-flex; align-items: center; justify-content: center; opacity: 0.6; transition: opacity 0.3s ease, transform 0.2s ease;"
+                               onmouseover="this.style.opacity='1'; this.style.transform='translateY(-2px)'"
+                               onmouseout="this.style.opacity='0.6'; this.style.transform='translateY(0)'">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--muted);">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </a>
+
+                            <!-- Facebook Icon -->
+                            <a href="https://www.facebook.com/agentousmaan"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Follow us on Facebook"
+                               style="display: inline-flex; align-items: center; justify-content: center; opacity: 0.6; transition: opacity 0.3s ease, transform 0.2s ease;"
+                               onmouseover="this.style.opacity='1'; this.style.transform='translateY(-2px)'"
+                               onmouseout="this.style.opacity='0.6'; this.style.transform='translateY(0)'">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--muted);">
+                                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                                </svg>
+                            </a>
+
+                            <!-- LinkedIn Icon -->
+                            <a href="https://www.linkedin.com/in/ousmaan-ahmed"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="Connect with us on LinkedIn"
+                               style="display: inline-flex; align-items: center; justify-content: center; opacity: 0.6; transition: opacity 0.3s ease, transform 0.2s ease;"
+                               onmouseover="this.style.opacity='1'; this.style.transform='translateY(-2px)'"
+                               onmouseout="this.style.opacity='0.6'; this.style.transform='translateY(0)'">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--muted);">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                        </div>
+
                         <p style="color: var(--muted); margin-bottom: 32px;">
                             My approach is rooted in strategy, not sales. Working with Silver Leaf Financial Group and Dominion Lending Centres, I provide clients with institutional-grade mortgage advice that prioritizes long-term wealth over short-term bank profits.
                         </p>
@@ -593,7 +848,7 @@
             <div class="container" style="position: relative; z-index: 1;">
                 <h2 style="font-size: 2.5rem; margin-bottom: 24px;">Ready to start?</h2>
                 <p style="margin-bottom: 40px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto; color: var(--text);">
-                    Access the Newton Velocity secure portal to submit your details. It is the fastest way to receive a formal analysis.
+                    Access the secure portal to submit your mortgage application. This is the fastest way to begin the approval process.
                 </p>
                 <button class="btn btn-newton" style="background: var(--accent); color: var(--bg); padding: 18px 48px; font-size: 1rem; font-weight: 700; box-shadow: 0 10px 24px rgba(0,0,0,0.35);">Open Secure Intake</button>
             </div>
@@ -602,32 +857,36 @@
 
     <footer>
         <div class="container">
-            <div class="footer-top">
-                <div class="brand">
-                    <span class="brand-name" style="color: white;">Ousmaan Mortgages</span>
-                    <span class="brand-tag">Strategic Mortgage Advisory</span>
-                    <a href="tel:6477715063" style="color: var(--text); display: block; margin-top: 16px; font-size: 1rem; text-decoration: none;">647 771 5063</a>
+            <div class="footer-columns">
+                <div class="footer-left">
+                    <div class="footer-brand">OUSMAAN MORTGAGES</div>
+                    <div class="footer-tagline">Strategy first advisory</div>
+                    <a href="tel:6477715063" class="footer-contact">647 771 5063</a>
+                    <a href="mailto:ousmaan@silverdlc.com" class="footer-contact">ousmaan@silverdlc.com</a>
                 </div>
-                <div class="footer-links">
+                <div class="footer-right">
+                    <a href="/first-time-home-buyer.html">First Time Home Buyers</a>
                     <a href="#renewal">Renewal</a>
                     <a href="#refinance">Refinance</a>
                     <a href="#about">About</a>
-                    <a href="#tool">Secure Portal</a>
+                    <a href="#tool">My Application</a>
                 </div>
             </div>
-            <div class="compliance">
-                <p>Ousmaan Ahmed | Mortgage Agent Level 1 | Silver Leaf Financial Group | Dominion Lending Centres</p>
-                <p style="margin-top: 12px; opacity: 0.5;">
+            <div class="footer-compliance">
+                <p class="compliance-license">Ousmaan Ahmed | Mortgage Agent Level 1 | License #M25002486<br>Dominion Lending Centres | Silver Leaf Financial Group | Brokerage Licence #13415</p>
+                <p class="compliance-disclaimer">
                     Disclaimer: This website is for informational purposes only. Information is subject to change without notice. Guaranteed approval, specific rates, or terms are not implied. All mortgage applications are subject to lender credit approval and property appraisal.
                 </p>
-                <p style="margin-top: 40px;">© <span id="year"></span> Ousmaan Mortgages. All rights reserved.</p>
+            </div>
+            <div class="footer-copyright">
+                © <span id="year"></span> Ousmaan Mortgages. All rights reserved.
             </div>
         </div>
     </footer>
 
     <script>
         // Newton Velocity Secure Redirect
-        const VELOCITY_URL = "https://velocity-client.newton.ca/en/client/journey/home?shortCode=1oc5nxsd4pz6u";
+        const VELOCITY_URL = "https://velocity-client.newton.ca/en/client/journey/home?shortCode=1w3bhezc8rjqi";
 
         document.querySelectorAll('.btn-newton').forEach(button => {
             button.addEventListener('click', (e) => {
@@ -654,16 +913,6 @@
             }
 
             lastScroll = currentScroll;
-        });
-
-        // Smooth Scroll (already handled by CSS, but good for mobile nav closers)
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
         });
     </script>
 </body>

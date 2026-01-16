@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Time Home Buyer | Ousmaan Mortgages</title>
+    <meta name="description" content="First time home buyer guidance. FHSA expertise, pre-approval strategy, and down payment planning with Ousmaan Ahmed.">
+
+    <!-- Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            /* Light System */
+            --bg: #f7f8f6;
+            --bg-2: #ffffff;
+            --surface: #ffffff;
+            --surface-2: #ffffff;
+            --border: rgba(0,0,0,0.06);
+            --border-2: rgba(0,0,0,0.06);
+            --text: #0f1412;
+            --muted: #4b5551;
+            --muted-2: #6b7470;
+
+            /* Warm Sage Accent */
+            --accent: #5F7466;
+            --accent-2: #51685B;
+            --accent-soft: rgba(95,116,102,0.18);
+
+            /* Layout */
+            --container-width: 1200px;
+            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- Layout --- */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 104px 0;
+            position: relative;
+        }
+
+        section::after {
+            content: '';
+            position: absolute;
+            bottom: -28px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent-soft), transparent);
+            opacity: 0.9;
+        }
+
+        section:last-of-type::after {
+            display: none;
+        }
+
+        /* --- Header --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: #0f1412;
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .nav-inner {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            justify-content: flex-start;
+        }
+
+        .navbar-logo {
+            height: 70px;
+            width: auto;
+            display: block;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .brand-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.95);
+            text-align: left;
+        }
+
+        .brand-tag {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-align: left;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: rgba(255,255,255,0.75);
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: rgba(255,255,255,0.95); }
+
+        .nav-links .btn-outline {
+            border-color: rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.9);
+        }
+
+        .nav-links .btn-outline:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.3);
+        }
+
+        /* --- Buttons --- */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            border: none;
+            letter-spacing: 0.02em;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-2);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--border-2);
+            color: var(--text);
+        }
+
+        .btn-outline:hover {
+            background: rgba(0,0,0,0.02);
+            border-color: rgba(0,0,0,0.12);
+        }
+
+        /* --- Hero Section --- */
+        .hero-label {
+            color: var(--text);
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+            display: block;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.75rem);
+            line-height: 1.1;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+        }
+
+        .hero-sub {
+            font-size: 1.15rem;
+            color: var(--text);
+            margin-bottom: 36px;
+            font-weight: 400;
+            opacity: 0.85;
+        }
+
+        /* --- Cards & Grid --- */
+        .section-header {
+            margin-bottom: 60px;
+            max-width: 700px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .grid {
+            display: grid;
+            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .card {
+            background: var(--surface);
+            padding: 48px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            transition: all 0.15s ease;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        .card-num {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            opacity: 0.9;
+            margin-bottom: 24px;
+            display: inline-block;
+            line-height: 1;
+            letter-spacing: -0.02em;
+            background: var(--accent-soft);
+            padding: 8px 16px;
+            border-radius: 6px;
+            border: 1px solid var(--accent-soft);
+        }
+
+        .decision-flow {
+            position: relative;
+        }
+
+        .decision-flow .card {
+            position: relative;
+        }
+
+        @media (min-width: 769px) {
+            .decision-flow .card:not(:last-child)::before {
+                content: '→';
+                position: absolute;
+                right: -12px;
+                top: 50%;
+                transform: translate(100%, -50%);
+                color: var(--accent);
+                font-size: 1.5rem;
+                opacity: 0.3;
+                z-index: 1;
+            }
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 40px 0 24px;
+            background: #fafaf9;
+            border-top: 1px solid var(--border);
+            font-size: 0.875rem;
+            color: var(--muted);
+        }
+
+        .footer-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .footer-brand {
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .footer-tagline {
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-bottom: 8px;
+        }
+
+        .footer-contact {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.9rem;
+            opacity: 0.85;
+            transition: opacity 0.2s ease;
+        }
+
+        .footer-contact:hover {
+            opacity: 1;
+        }
+
+        .footer-contact:visited {
+            color: var(--text);
+        }
+
+        .footer-right {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .footer-right a {
+            color: var(--text);
+            text-decoration: none;
+            opacity: 0.8;
+            font-size: 0.9rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .footer-right a:hover {
+            opacity: 1;
+        }
+
+        .footer-right a:visited {
+            color: var(--text);
+        }
+
+        .footer-right a:active {
+            color: var(--text);
+        }
+
+        .footer-compliance {
+            padding: 24px 0 20px;
+            max-width: 800px;
+        }
+
+        .compliance-license {
+            font-size: 0.75rem;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 12px;
+            pointer-events: none;
+            user-select: text;
+        }
+
+        .compliance-disclaimer {
+            font-size: 0.7rem;
+            color: var(--muted);
+            opacity: 0.65;
+            line-height: 1.6;
+            pointer-events: none;
+            user-select: text;
+        }
+
+        .footer-copyright {
+            padding-top: 16px;
+            font-size: 0.75rem;
+            color: var(--muted);
+            opacity: 0.6;
+        }
+
+        /* Mobile Sticky Call Bar */
+        .mobile-call-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: var(--accent);
+            height: 50px;
+            transform: translateY(100%);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: none;
+        }
+
+        .mobile-call-bar.visible {
+            transform: translateY(0);
+        }
+
+        .mobile-call-bar a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: rgba(255,255,255,0.95);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            transition: opacity 0.2s ease, background-color 0.2s ease;
+        }
+
+        .mobile-call-bar a:active {
+            opacity: 0.9;
+        }
+
+        /* --- FHB Landing Page --- */
+        .fhb-landing {
+            padding: 180px 0 100px;
+            background-image:
+                linear-gradient(
+                    135deg,
+                    rgba(250, 250, 249, 0.92) 0%,
+                    rgba(245, 246, 244, 0.90) 25%,
+                    rgba(240, 242, 239, 0.88) 50%,
+                    rgba(238, 241, 237, 0.90) 75%,
+                    rgba(242, 244, 241, 0.92) 100%
+                ),
+                url("/images/ftb-hero-overlay.jpg");
+            background-size: cover, cover;
+            background-position: center, center;
+            background-blend-mode: normal;
+            position: relative;
+        }
+
+        .fhb-landing > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .fhb-form-container {
+            max-width: 600px;
+            margin-left: 0;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Hero copy left aligned */
+        .fhb-hero-copy {
+            max-width: 600px;
+            margin-left: 0;
+        }
+
+        /* Keep form centered */
+        #fhbForm .fhb-form-container,
+        .fhb-form-container form {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .fhb-form {
+            background: var(--surface);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+            margin-top: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--muted);
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text);
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        /* Optional textarea with lower visual weight */
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text);
+            font-size: 0.9rem;
+            font-family: 'Inter', sans-serif;
+            transition: var(--transition);
+            resize: vertical;
+            min-height: 80px;
+            opacity: 0.9;
+        }
+
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            opacity: 1;
+        }
+
+        .form-group textarea::placeholder {
+            color: var(--muted);
+            opacity: 0.6;
+        }
+
+        /* Lighter label for optional fields */
+        .form-group.optional label {
+            font-weight: 500;
+            opacity: 0.85;
+        }
+
+        .fhb-trust {
+            padding: 60px 0;
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 32px;
+        }
+
+        .trust-badge {
+            text-align: center;
+        }
+
+        .trust-badge-icon {
+            font-size: 2.5rem;
+            margin-bottom: 12px;
+            opacity: 0.7;
+        }
+
+        .trust-badge h4 {
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .trust-badge p {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .fhb-process {
+            padding: 80px 0;
+            background: var(--bg-2);
+        }
+
+        .fhb-faq {
+            padding: 80px 0;
+        }
+
+        .faq-item {
+            background: var(--surface);
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            margin-bottom: 16px;
+        }
+
+        .faq-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+
+        .faq-item p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            .nav-links, .nav-inner .btn { display: none; }
+
+            /* Mobile navbar left alignment */
+            .nav-inner {
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .brand {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+
+            .brand-text {
+                text-align: left;
+            }
+
+            .brand-name {
+                text-align: left;
+            }
+
+            .brand-tag {
+                text-align: left;
+                font-size: 0.65rem;
+                line-height: 1.3;
+            }
+
+            section { padding: 80px 0; }
+            .footer-columns { grid-template-columns: 1fr; gap: 32px; }
+            .card-num { font-size: 1.5rem; }
+            .card { padding: 36px; }
+            .mobile-call-bar {
+                display: block;
+            }
+            .fhb-landing {
+                padding: 140px 0 80px;
+            }
+            .fhb-form {
+                padding: 28px;
+            }
+            .trust-badges {
+                gap: 28px;
+            }
+
+            /* Ensure footer links keep proper sizing on mobile */
+            .footer-right a {
+                font-size: 0.9rem;
+            }
+
+            .footer-contact {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .fhb-form-container {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Sticky Call Bar -->
+    <div class="mobile-call-bar" id="mobileCallBar">
+        <a href="tel:6477715063">
+            Call 647 771 5063
+        </a>
+    </div>
+
+    <header>
+        <div class="container nav-inner">
+            <a href="/" style="text-decoration: none;">
+                <div class="brand">
+                    <img src="/SilverLeafFinancialGroup.png" alt="Silver Leaf Financial Group" class="navbar-logo" />
+                    <div class="brand-text">
+                        <span class="brand-name">Ousmaan Mortgages</span>
+                        <span class="brand-tag">Strategy First Advisor</span>
+                    </div>
+                </div>
+            </a>
+            <nav class="nav-links">
+                <a href="/">Home</a>
+                <a href="tel:6477715063" class="btn btn-outline">647 771 5063</a>
+                <button class="btn btn-primary btn-newton">Review My Options</button>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- First Time Home Buyer Landing Page -->
+        <section class="fhb-landing">
+            <div class="container">
+                <div class="fhb-form-container">
+
+                    <div class="fhb-hero-copy">
+                        <span class="hero-label">FIRST TIME HOME BUYER</span>
+                        <h1>First Time Buyer Plan</h1>
+                        <p class="hero-sub">Budget, down payment, and incentives mapped to your timeline.</p>
+
+                        <div style="margin-top: 32px;">
+                            <a href="#fhbForm" class="btn btn-primary" style="padding: 18px 48px; font-size: 1rem;">Get My Plan</a>
+                            <p style="margin-top: 12px; font-size: 0.85rem; color: var(--muted); opacity: 0.8;">
+                                Free review. No obligation. 15 minutes.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Incentives Section -->
+        <section style="padding: 80px 0; background: var(--bg-2);">
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin: 0 auto;">
+                    <h2>Programs That Apply To You</h2>
+                    <p>First time buyers have access to unique incentives and strategies.</p>
+                </div>
+                <div class="grid" style="margin-top: 60px; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                    <div class="card" style="padding: 32px;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 12px;">First Home Savings Account</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 0;">Tax-deductible contributions up to $8k/year. Tax-free withdrawal for your first home.</p>
+                    </div>
+                    <div class="card" style="padding: 32px;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 12px;">Home Buyers' Plan</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 0;">Withdraw up to $60k from RRSP for down payment. Repay over 15 years.</p>
+                    </div>
+                    <div class="card" style="padding: 32px;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 12px;">Land Transfer Tax Rebate</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 0;">Ontario rebates up to $4,000 on land transfer tax for eligible first time buyers.</p>
+                    </div>
+                    <div class="card" style="padding: 32px;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 12px;">Insured Mortgage Options</h3>
+                        <p style="font-size: 0.9rem; margin-bottom: 0;">Access to insured mortgages with as little as 5% down payment.</p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 48px;">
+                    <a href="#fhbForm" class="btn btn-primary">See What Applies To Me</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Section -->
+        <section class="fhb-trust">
+            <div class="container" style="text-align: center;">
+                <h2>Why First Time Buyers Choose Us</h2>
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <div class="trust-badge-icon">✓</div>
+                        <h4>Licensed & Independent</h4>
+                        <p>Not tied to one bank</p>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="trust-badge-icon">✓</div>
+                        <h4>First Time Buyer Guidance</h4>
+                        <p>Clear guidance at every step</p>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="trust-badge-icon">✓</div>
+                        <h4>Strategy First</h4>
+                        <p>Budget before promises</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3 Step Process -->
+        <section class="fhb-process">
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin: 0 auto;">
+                    <h2>Your Path to Home Ownership</h2>
+                    <p>A simple, clear process designed for first time buyers.</p>
+                </div>
+                <div class="grid decision-flow" style="margin-top: 60px;">
+                    <div class="card">
+                        <span class="card-num">STEP 1</span>
+                        <h3>Budget Reality Check</h3>
+                        <p>We review your income, down payment, and debt to calculate your true buying power—not what the banks claim you can afford.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-num">STEP 2</span>
+                        <h3>FHSA Strategy</h3>
+                        <p>Learn how to maximize your First Home Savings Account, avoid common mistakes, and structure your down payment properly.</p>
+                    </div>
+                    <div class="card">
+                        <span class="card-num">STEP 3</span>
+                        <h3>Pre-Approval Plan</h3>
+                        <p>Get a strategic pre-approval that positions you as a serious buyer, not just another rate shopper.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="fhb-faq">
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin: 0 auto;">
+                    <h2>Common Questions</h2>
+                </div>
+
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="faq-item">
+                        <h4>What is the minimum down payment for first time buyers?</h4>
+                        <p>For homes under $500k, you need 5% down. For homes $500k-$1M, it's 5% on the first $500k and 10% on the remainder. Over $1M requires 20% down.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>How does the FHSA work?</h4>
+                        <p>The First Home Savings Account lets you contribute up to $8,000/year (max $40,000 total) with tax-deductible contributions. Withdrawals for a first home purchase are tax-free. We guide you through the setup and timing.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>What credit score do I need?</h4>
+                        <p>Most lenders require a minimum credit score of 650-680. We review your credit and advise on improvement strategies if needed before you apply.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>Should I get pre-approved before house hunting?</h4>
+                        <p>Yes. A strategic pre-approval shows sellers you're serious and gives you a clear budget. We ensure your pre-approval is structured to maximize your negotiating position.</p>
+                    </div>
+
+                    <div class="faq-item">
+                        <h4>Do you charge fees to first time buyers?</h4>
+                        <p>No. Mortgage brokers are compensated by lenders when your mortgage funds. Our service is free to you, and there's no obligation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2-Step Form Section -->
+        <section id="fhbForm" style="padding: 80px 0; background: var(--bg-2);">
+            <div class="container">
+                <div class="fhb-form-container">
+                    <div style="text-align: center; margin-bottom: 40px;">
+                        <h2>Get Your First Time Buyer Plan</h2>
+                        <p class="hero-sub" style="margin-bottom: 0;">Start with your contact info and timeline.</p>
+                    </div>
+
+                    <!-- Step 1 Form -->
+                    <div id="step1Container" class="fhb-form">
+                        <form
+                            id="step1Form"
+                            name="first_time_buyer_plan"
+                            method="POST"
+                            data-netlify="true"
+                            data-netlify-honeypot="bot-field"
+                            action="/thank-you/first-time-buyer-plan"
+                        >
+                            <!-- Hidden Netlify form identifier -->
+                            <input type="hidden" name="form-name" value="first_time_buyer_plan" />
+
+                            <!-- Honeypot field for spam protection -->
+                            <input name="bot-field" class="hidden" style="display: none;" />
+
+                            <div class="form-group">
+                                <label for="fhb-fullName">Full Name</label>
+                                <input type="text" id="fhb-fullName" name="fullName" placeholder="John Doe" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fhb-phone">Phone Number</label>
+                                <input type="tel" id="fhb-phone" name="phone" placeholder="647-123-4567" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fhb-email">Email</label>
+                                <input type="email" id="fhb-email" name="email" placeholder="email@example.com" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fhb-timeline">Purchase Timeline</label>
+                                <select id="fhb-timeline" name="purchaseTimeline" required>
+                                    <option value="">Select timeline</option>
+                                    <option value="0-3">0-3 months</option>
+                                    <option value="3-6">3-6 months</option>
+                                    <option value="6-12">6-12 months</option>
+                                    <option value="12+">12+ months</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group optional">
+                                <label for="fhb-additional">Anything you want us to know? (optional)</label>
+                                <textarea id="fhb-additional" name="additionalInfo" placeholder="Questions, concerns, or details about your situation"></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 12px;">Get My Plan</button>
+                        </form>
+                    </div>
+
+                    <!-- Success State -->
+                    <div id="successState" class="fhb-form" style="display: none; text-align: center;">
+                        <div style="margin-bottom: 32px;">
+                            <div style="font-size: 3rem; margin-bottom: 16px; opacity: 0.7;">✓</div>
+                            <h3 style="font-size: 1.5rem; margin-bottom: 16px; font-weight: 600;">Thanks. We will text you within 24 hours.</h3>
+                        </div>
+
+                        <a href="https://velocity-client.newton.ca/en/client/journey/home?shortCode=1w3bhezc8rjqi" class="btn btn-primary" style="width: 100%; margin-bottom: 16px;">Continue in Secure Portal</a>
+
+                        <div style="margin-top: 20px;">
+                            <a href="tel:6477715063" style="color: var(--muted); text-decoration: none; font-size: 0.95rem;">Or call 647 771 5063</a>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 Form (Optional - for future use if needed) -->
+                    <div id="step2Container" class="fhb-form" style="display: none;">
+                        <div style="text-align: center; margin-bottom: 24px;">
+                            <p style="color: var(--muted); font-size: 0.9rem;">Optional: Help us prepare better</p>
+                        </div>
+                        <form id="step2Form">
+                            <div class="form-group">
+                                <label for="fhb-name">Full Name</label>
+                                <input type="text" id="fhb-name" name="name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fhb-city">City</label>
+                                <input type="text" id="fhb-city" name="city">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fhb-price">Estimated Price Range</label>
+                                <select id="fhb-price" name="price">
+                                    <option value="">Select price range</option>
+                                    <option value="300-400">$300k - $400k</option>
+                                    <option value="400-500">$400k - $500k</option>
+                                    <option value="500-600">$500k - $600k</option>
+                                    <option value="600-750">$600k - $750k</option>
+                                    <option value="750-1000">$750k - $1M</option>
+                                    <option value="1000+">$1M+</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 12px;">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section style="text-align: center; background: var(--bg); background-image: radial-gradient(900px 420px at 50% 0%, var(--accent-soft), transparent 60%), radial-gradient(700px 360px at 20% 20%, rgba(95,116,102,0.10), transparent 55%); padding: 104px 0; position: relative;">
+            <div style="position: absolute; inset: 0; background: linear-gradient(135deg, var(--accent) 0%, rgba(81, 104, 91, 0.85) 100%); opacity: 0.15;"></div>
+            <div class="container" style="position: relative; z-index: 1;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 24px;">Start Your First Home Journey</h2>
+                <p style="margin-bottom: 40px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto; color: var(--text);">
+                    Get clarity on budget, down payment, and FHSA strategy. No pressure, no obligation.
+                </p>
+                <a href="#fhbForm" class="btn" style="background: var(--accent); color: var(--bg); padding: 18px 48px; font-size: 1rem; font-weight: 700; box-shadow: 0 10px 24px rgba(0,0,0,0.35);">Complete the Review Form</a>
+                <div style="margin-top: 24px;">
+                    <a href="tel:6477715063" style="color: var(--text); text-decoration: none; opacity: 0.85; font-size: 0.95rem;">Or call 647 771 5063</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-columns">
+                <div class="footer-left">
+                    <div class="footer-brand">OUSMAAN MORTGAGES</div>
+                    <div class="footer-tagline">Strategy first advisory</div>
+                    <a href="tel:6477715063" class="footer-contact">647 771 5063</a>
+                    <a href="mailto:ousmaan@silverdlc.com" class="footer-contact">ousmaan@silverdlc.com</a>
+                </div>
+                <div class="footer-right">
+                    <a href="/first-time-home-buyer.html">First Time Home Buyers</a>
+                    <a href="/#renewal">Renewal</a>
+                    <a href="/#refinance">Refinance</a>
+                    <a href="/#about">About</a>
+                    <a href="/#tool">My Application</a>
+                </div>
+            </div>
+            <div class="footer-compliance">
+                <p class="compliance-license">Ousmaan Ahmed | Mortgage Agent Level 1 | License #M25002486<br>Dominion Lending Centres | Silver Leaf Financial Group | Brokerage Licence #13415</p>
+                <p class="compliance-disclaimer">
+                    Disclaimer: This website is for informational purposes only. Information is subject to change without notice. Guaranteed approval, specific rates, or terms are not implied. All mortgage applications are subject to lender credit approval and property appraisal.
+                </p>
+            </div>
+            <div class="footer-copyright">
+                © <span id="year"></span> Ousmaan Mortgages. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Newton Velocity Secure Redirect
+        const VELOCITY_URL = "https://velocity-client.newton.ca/en/client/journey/home?shortCode=1w3bhezc8rjqi";
+
+        document.querySelectorAll('.btn-newton').forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = VELOCITY_URL;
+            });
+        });
+
+        // Set Current Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Sticky Call Bar on Scroll
+        let lastScroll = 0;
+        const mobileCallBar = document.getElementById('mobileCallBar');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            // Show after scrolling down 300px
+            if (currentScroll > 300) {
+                mobileCallBar.classList.add('visible');
+            } else {
+                mobileCallBar.classList.remove('visible');
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Netlify Form Submission (Native handling)
+        // The form now submits naturally to Netlify and redirects to /thank-you/first-time-buyer-plan
+        // Google Ads conversion tracking happens on the thank-you page
+        document.getElementById('step1Form')?.addEventListener('submit', (e) => {
+            // Track form submission before Netlify redirect
+            if (window.gtag) {
+                window.gtag('event', 'fhb_step1_submit', {
+                    'event_category': 'FHB',
+                    'event_label': 'First Time Buyer Plan Form Submission',
+                    'value': 1
+                });
+            }
+
+            console.log('FHB Form Submitting to Netlify');
+            // Allow native form submission (no e.preventDefault())
+        });
+
+        // Optional: Step 2 Form Submission (if user wants to provide more info)
+        document.getElementById('step2Form')?.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const formData = {
+                name: document.getElementById('fhb-name').value,
+                city: document.getElementById('fhb-city').value,
+                price: document.getElementById('fhb-price').value
+            };
+
+            // Track step 2 submission
+            if (window.gtag) {
+                window.gtag('event', 'fhb_step2_submit', {
+                    'event_category': 'FHB',
+                    'event_label': 'Step 2 Submission',
+                    'value': 1
+                });
+            }
+
+            console.log('FHB Step 2 Submit:', formData);
+
+            // Show success state
+            document.getElementById('step2Container').style.display = 'none';
+            document.getElementById('successState').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
