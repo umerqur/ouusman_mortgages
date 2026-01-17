@@ -5,8 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ousmaan Mortgages | Renewal & Refinance Strategy</title>
     <meta name="description" content="Mortgage renewal and refinance strategy. Review your options before you sign. Silver Leaf Financial Group | Dominion Lending Centres.">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17878994714"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'AW-17878994714');
+    </script>
 
-
+    
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
@@ -899,10 +908,18 @@ We help you review before renewal to avoid overpaying.</p>
 
         document.querySelectorAll('.btn-newton').forEach(button => {
             button.addEventListener('click', (e) => {
-                e.preventDefault();
-                window.location.href = VELOCITY_URL;
-            });
-        });
+                e.preventDefault()
+        
+                gtag('event', 'conversion', {
+                  'send_to': 'AW-17878994714/60yZCJu2_eYbEJger81C',
+                  'value': 1.0,
+                  'currency': 'CAD'
+                })
+        
+                window.location.href = VELOCITY_URL
+            })
+        })
+        ;
 
         // Set Current Year
         document.getElementById('year').textContent = new Date().getFullYear();
