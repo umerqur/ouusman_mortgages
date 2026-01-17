@@ -907,19 +907,28 @@ We help you review before renewal to avoid overpaying.</p>
         const VELOCITY_URL = "https://velocity-client.newton.ca/en/client/journey/home?shortCode=1w3bhezc8rjqi";
 
         document.querySelectorAll('.btn-newton').forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault()
+          button.addEventListener('click', (e) => {
+            e.preventDefault()
         
-                gtag('event', 'conversion', {
-                  'send_to': 'AW-17878994714/60yZCJu2_eYbEJger81C',
-                  'value': 1.0,
-                  'currency': 'CAD'
-                })
+            let redirected = false
+            const go = () => {
+              if (redirected) return
+              redirected = true
+              window.location.href = VELOCITY_URL
+            }
         
-                window.location.href = VELOCITY_URL
+            // Fallback so user never gets stuck
+            setTimeout(go, 800)
+        
+            gtag('event', 'conversion', {
+              'send_to': 'AW-17878994714/60yZCJu2_eYbEJger81C',
+              'value': 1.0,
+              'currency': 'CAD',
+              'event_callback': go
             })
+          })
         })
-        ;
+
 
         // Set Current Year
         document.getElementById('year').textContent = new Date().getFullYear();
