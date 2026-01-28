@@ -947,58 +947,81 @@ We help you review before renewal to avoid overpaying.</p>
             <div class="container">
                 <div class="fhb-form-container">
                     <div style="text-align: center; margin-bottom: 40px;">
-                        <h2>Get Your First Time Buyer Plan</h2>
-                        <p class="hero-sub" style="margin-bottom: 0;">Start with your contact info and timeline.</p>
+                        <h2>Start Your Mortgage Strategy Review</h2>
+                        <p class="hero-sub" style="margin-bottom: 0;">Free review. No obligation. Takes about 2 minutes.</p>
                     </div>
 
                     <!-- Lead Capture Form -->
                     <div id="step1Container" class="fhb-form">
                         <form
                             id="step1Form"
-                            name="first_time_buyer_plan"
+                            name="mortgage_strategy_review"
                             method="POST"
                             data-netlify="true"
                             data-netlify-honeypot="bot-field"
-                            action="/thank-you/first-time-buyer-plan"
+                            action="/thank-you/mortgage-strategy-review"
                         >
                             <!-- Hidden Netlify form identifier -->
-                            <input type="hidden" name="form-name" value="first_time_buyer_plan" />
+                            <input type="hidden" name="form-name" value="mortgage_strategy_review" />
 
                             <!-- Honeypot field for spam protection -->
                             <input name="bot-field" class="hidden" style="display: none;" />
 
                             <div class="form-group">
-                                <label for="fhb-fullName">Full Name</label>
-                                <input type="text" id="fhb-fullName" name="fullName" placeholder="John Doe" required>
+                                <label for="msr-fullName">Full Name</label>
+                                <input type="text" id="msr-fullName" name="fullName" placeholder="John Doe" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="fhb-phone">Phone Number</label>
-                                <input type="tel" id="fhb-phone" name="phone" placeholder="647-123-4567" required>
+                                <label for="msr-email">Email</label>
+                                <input type="email" id="msr-email" name="email" placeholder="email@example.com" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="fhb-email">Email</label>
-                                <input type="email" id="fhb-email" name="email" placeholder="email@example.com" required>
+                                <label for="msr-phone">Phone Number</label>
+                                <input type="tel" id="msr-phone" name="phone" placeholder="6471234567" required>
                             </div>
 
                             <div class="form-group">
-                                <label for="fhb-timeline">Purchase Timeline</label>
-                                <select id="fhb-timeline" name="purchaseTimeline" required>
+                                <label for="msr-reviewType">What are you reviewing?</label>
+                                <select id="msr-reviewType" name="reviewType" required>
+                                    <option value="">Select an option</option>
+                                    <option value="mortgage-renewal">Mortgage Renewal</option>
+                                    <option value="refinancing">Refinancing</option>
+                                    <option value="not-sure">Not sure yet</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="msr-renewalTimeline">When is your mortgage up for renewal?</label>
+                                <select id="msr-renewalTimeline" name="renewalTimeline" required>
                                     <option value="">Select timeline</option>
-                                    <option value="0-3">0-3 months</option>
-                                    <option value="3-6">3-6 months</option>
-                                    <option value="6-12">6-12 months</option>
-                                    <option value="12+">12+ months</option>
+                                    <option value="less-than-3-months">Less than 3 months</option>
+                                    <option value="3-to-6-months">3 to 6 months</option>
+                                    <option value="6-to-12-months">6 to 12 months</option>
+                                    <option value="already-renewed">Already renewed</option>
+                                    <option value="not-sure">Not sure</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="msr-mortgageBalance">Approximate remaining mortgage balance</label>
+                                <select id="msr-mortgageBalance" name="mortgageBalance" required>
+                                    <option value="">Select balance range</option>
+                                    <option value="under-250k">Under $250,000</option>
+                                    <option value="250k-500k">$250,000 to $500,000</option>
+                                    <option value="500k-750k">$500,000 to $750,000</option>
+                                    <option value="over-750k">Over $750,000</option>
                                 </select>
                             </div>
 
                             <div class="form-group optional">
-                                <label for="fhb-additional">Anything you want us to know? (optional)</label>
-                                <textarea id="fhb-additional" name="additionalInfo" placeholder="Questions, concerns, or details about your situation"></textarea>
+                                <label for="msr-additional">Anything important we should know? (optional)</label>
+                                <textarea id="msr-additional" name="additionalInfo" placeholder="penalties, debt consolidation, renovations, investment plans, etc"></textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 12px;">Get My Plan</button>
+                            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 12px;">Review My Mortgage Options</button>
+                            <p style="text-align: center; margin-top: 12px; font-size: 0.85rem; color: var(--muted);">No cost. Strategy first. No pressure.</p>
                         </form>
                     </div>
 
@@ -1079,14 +1102,14 @@ We help you review before renewal to avoid overpaying.</p>
         });
 
         // Netlify Form Submission (Native handling)
-        // The form submits naturally to Netlify and redirects to /thank-you/first-time-buyer-plan
+        // The form submits naturally to Netlify and redirects to /thank-you/mortgage-strategy-review
         // Google Ads conversion tracking happens on the thank-you page
         document.getElementById('step1Form')?.addEventListener('submit', (e) => {
             // Track form submission before Netlify redirect
             if (window.gtag) {
-                window.gtag('event', 'fhb_step1_submit', {
-                    'event_category': 'FHB',
-                    'event_label': 'First Time Buyer Plan Form Submission',
+                window.gtag('event', 'mortgage_strategy_submit', {
+                    'event_category': 'MSR',
+                    'event_label': 'Mortgage Strategy Review Form Submission',
                     'value': 1
                 });
             }
