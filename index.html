@@ -942,6 +942,49 @@ We help you review before renewal to avoid overpaying.</p>
             </div>
         </section>
 
+        <!-- Mortgage Calculator Section -->
+        <section id="calculator" style="padding: 80px 0; background: var(--bg);">
+            <div class="container">
+                <div class="fhb-form-container">
+                    <div style="text-align: center; margin-bottom: 40px;">
+                        <h2>Monthly Payment Estimate</h2>
+                        <p class="hero-sub" style="margin-bottom: 0;">Get a quick estimate of your monthly mortgage payment.</p>
+                    </div>
+                    <div class="fhb-form">
+                        <div class="form-group">
+                            <label for="calc-amount">Mortgage Amount (CAD)</label>
+                            <input type="number" id="calc-amount" placeholder="e.g. 500000" min="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="calc-rate">Interest Rate (%)</label>
+                            <input type="number" id="calc-rate" placeholder="e.g. 5.25" min="0" step="0.01">
+                        </div>
+                        <div class="form-group">
+                            <label for="calc-amortization">Amortization (Years)</label>
+                            <select id="calc-amortization">
+                                <option value="10">10 years</option>
+                                <option value="15">15 years</option>
+                                <option value="20">20 years</option>
+                                <option value="25" selected>25 years</option>
+                                <option value="30">30 years</option>
+                            </select>
+                        </div>
+                        <div id="calc-error" style="display: none; color: #c0392b; font-size: 0.85rem; margin-bottom: 12px;"></div>
+                        <div style="display: flex; align-items: center; gap: 16px; margin-top: 12px;">
+                            <button type="button" id="calcBtn" class="btn btn-primary" style="flex: 1;">Calculate</button>
+                            <button type="button" id="calcReset" style="background: none; border: none; color: var(--muted); font-size: 0.85rem; cursor: pointer; font-family: 'Inter', sans-serif; text-decoration: underline;">Reset</button>
+                        </div>
+                        <div id="calc-result" style="display: none; margin-top: 24px; padding: 20px; background: var(--bg); border-radius: 8px; border: 1px solid var(--border); text-align: center;">
+                            <p style="font-size: 0.85rem; color: var(--muted); margin-bottom: 8px;">Estimated Monthly Payment</p>
+                            <p id="calc-payment" style="font-size: 1.75rem; font-weight: 700; color: var(--text);"></p>
+                            <p style="font-size: 0.75rem; color: var(--muted); margin-top: 12px; opacity: 0.8;">Estimate only. Final numbers depend on lender and structure.</p>
+                            <p style="font-size: 0.85rem; color: var(--muted); margin-top: 16px;">Want a personalized strategy review? <a href="#leadForm" style="color: var(--accent); text-decoration: underline;">Fill out the form below.</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Lead Capture Form Section -->
         <section id="leadForm" style="padding: 80px 0; background: var(--bg-2);">
             <div class="container">
@@ -1094,6 +1137,56 @@ We help you review before renewal to avoid overpaying.</p>
 
             console.log('Lead Form Submitting to Netlify');
             // Allow native form submission (no e.preventDefault())
+        });
+
+        // Mortgage Calculator
+        document.getElementById('calcBtn').addEventListener('click', function() {
+            var amountEl = document.getElementById('calc-amount');
+            var rateEl = document.getElementById('calc-rate');
+            var amortEl = document.getElementById('calc-amortization');
+            var errorEl = document.getElementById('calc-error');
+            var resultEl = document.getElementById('calc-result');
+            var paymentEl = document.getElementById('calc-payment');
+
+            var amount = parseFloat(amountEl.value);
+            var rate = parseFloat(rateEl.value);
+            var years = parseInt(amortEl.value);
+
+            errorEl.style.display = 'none';
+
+            if (!amountEl.value || isNaN(amount) || amount <= 0) {
+                errorEl.textContent = 'Please enter a valid mortgage amount.';
+                errorEl.style.display = 'block';
+                resultEl.style.display = 'none';
+                return;
+            }
+            if (!rateEl.value || isNaN(rate) || rate < 0) {
+                errorEl.textContent = 'Please enter a valid interest rate.';
+                errorEl.style.display = 'block';
+                resultEl.style.display = 'none';
+                return;
+            }
+
+            var payment;
+            if (rate === 0) {
+                payment = amount / (years * 12);
+            } else {
+                var r = (rate / 100) / 12;
+                var n = years * 12;
+                payment = amount * r * Math.pow(1 + r, n) / (Math.pow(1 + r, n) - 1);
+            }
+
+            paymentEl.textContent = '$' + payment.toLocaleString('en-CA', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+            resultEl.style.display = 'block';
+            errorEl.style.display = 'none';
+        });
+
+        document.getElementById('calcReset').addEventListener('click', function() {
+            document.getElementById('calc-amount').value = '';
+            document.getElementById('calc-rate').value = '';
+            document.getElementById('calc-amortization').value = '25';
+            document.getElementById('calc-error').style.display = 'none';
+            document.getElementById('calc-result').style.display = 'none';
         });
     </script>
 </body>
