@@ -1,457 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Request Received | Ousmaan Mortgages</title>
-    <meta name="description" content="Your mortgage strategy review request has been received. Ousmaan will review your details and follow up shortly.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request Received | Ousmaan Mortgages</title>
+  <meta name="description" content="Your mortgage strategy review request has been received. Ousmaan will review your details and follow up shortly." />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
-    <link rel="apple-touch-icon" href="/images/favicon.png">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png" />
+  <link rel="apple-touch-icon" href="/images/favicon.png" />
 
-    <!-- Premium Typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Premium Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17878994714"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17878994714"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17878994714');
+  </script>
 
-      gtag('config', 'AW-17878994714');
-    </script>
+  <style>
+    :root {
+      /* Light System */
+      --bg: #f7f8f6;
+      --bg-2: #ffffff;
+      --surface: #ffffff;
+      --surface-2: #ffffff;
+      --border: rgba(0,0,0,0.06);
+      --border-2: rgba(0,0,0,0.06);
+      --text: #0f1412;
+      --muted: #4b5551;
+      --muted-2: #6b7470;
 
-    <style>
-        :root {
-            /* Light System */
-            --bg: #f7f8f6;
-            --bg-2: #ffffff;
-            --surface: #ffffff;
-            --surface-2: #ffffff;
-            --border: rgba(0,0,0,0.06);
-            --border-2: rgba(0,0,0,0.06);
-            --text: #0f1412;
-            --muted: #4b5551;
-            --muted-2: #6b7470;
+      /* Warm Sage Accent */
+      --accent: #5F7466;
+      --accent-2: #51685B;
+      --accent-soft: rgba(95,116,102,0.18);
 
-            /* Warm Sage Accent */
-            --accent: #5F7466;
-            --accent-2: #51685B;
-            --accent-soft: rgba(95,116,102,0.18);
+      /* Layout */
+      --container-width: 1200px;
+      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
 
-            /* Layout */
-            --container-width: 1200px;
-            --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: var(--bg);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        html { scroll-behavior: smooth; }
+    /* --- Layout --- */
+    .container {
+      max-width: var(--container-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-        body {
-            background-color: var(--bg);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            color: var(--text);
-            line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
-        }
+    /* --- Header --- */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: #0f1412;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
 
-        /* --- Layout --- */
-        .container {
-            max-width: var(--container-width);
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+    .nav-inner {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        /* --- Header --- */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: #0f1412;
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
 
-        .nav-inner {
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+    .navbar-logo {
+      height: 70px;
+      width: auto;
+      display: block;
+    }
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
 
-        .navbar-logo {
-            height: 70px;
-            width: auto;
-            display: block;
-        }
+    .brand-name {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.95);
+    }
 
-        .brand-text {
-            display: flex;
-            flex-direction: column;
-        }
+    .brand-tag {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
 
-        .brand-name {
-            font-weight: 700;
-            font-size: 1.1rem;
-            letter-spacing: -0.02em;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.95);
-        }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+    }
 
-        .brand-tag {
-            font-size: 0.7rem;
-            color: rgba(255,255,255,0.6);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
+    .nav-links a:hover { color: rgba(255,255,255,0.95); }
 
-        .nav-links a {
-            text-decoration: none;
-            color: rgba(255,255,255,0.75);
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: var(--transition);
-        }
+    /* --- Buttons --- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+      border: none;
+      letter-spacing: 0.02em;
+    }
 
-        .nav-links a:hover { color: rgba(255,255,255,0.95); }
+    .btn-primary {
+      background: var(--accent);
+      color: var(--bg);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+    }
 
-        /* --- Buttons --- */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 28px;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            text-decoration: none;
-            border: none;
-            letter-spacing: 0.02em;
-        }
+    .btn-primary:hover {
+      background: var(--accent-2);
+      transform: translateY(-1px);
+    }
 
-        .btn-primary {
-            background: var(--accent);
-            color: var(--bg);
-            box-shadow: 0 10px 24px rgba(0,0,0,0.35);
-        }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.22);
+      color: rgba(255,255,255,0.9);
+    }
 
-        .btn-primary:hover {
-            background: var(--accent-2);
-            transform: translateY(-1px);
-        }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.06);
+      border-color: rgba(255,255,255,0.35);
+    }
 
-        .btn-outline {
-            background: transparent;
-            border: 1px solid var(--border-2);
-            color: var(--text);
-        }
+    /* --- Thank You Section --- */
+    .thank-you-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 120px 24px 80px;
+      background:
+        linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.90)),
+        url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=2000') no-repeat center center;
+      background-size: cover;
+    }
 
-        .btn-outline:hover {
-            background: rgba(0,0,0,0.02);
-            border-color: rgba(0,0,0,0.12);
-        }
+    .thank-you-card {
+      background: var(--surface);
+      padding: 60px 48px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      max-width: 600px;
+      text-align: center;
+    }
 
-        /* --- Thank You Section --- */
-        .thank-you-section {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 120px 24px 80px;
-            background:
-                linear-gradient(rgba(255,255,255,0.75), rgba(255,255,255,0.90)),
-                url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=2000') no-repeat center center;
-            background-size: cover;
-        }
+    .success-icon {
+      font-size: 4rem;
+      margin-bottom: 24px;
+      opacity: 0.7;
+    }
 
-        .thank-you-card {
-            background: var(--surface);
-            padding: 60px 48px;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-            max-width: 600px;
-            text-align: center;
-        }
+    .thank-you-card h1 {
+      font-size: 2.5rem;
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 24px;
+    }
 
-        .success-icon {
-            font-size: 4rem;
-            margin-bottom: 24px;
-            opacity: 0.7;
-        }
+    .thank-you-card p {
+      font-size: 1.1rem;
+      color: var(--text);
+      margin-bottom: 40px;
+      line-height: 1.7;
+      opacity: 0.85;
+    }
 
-        .thank-you-card h1 {
-            font-size: 2.5rem;
-            line-height: 1.1;
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            margin-bottom: 24px;
-        }
+    .secondary-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
 
-        .thank-you-card p {
-            font-size: 1.1rem;
-            color: var(--text);
-            margin-bottom: 40px;
-            line-height: 1.7;
-            opacity: 0.85;
-        }
+    .secondary-link:hover {
+      color: var(--accent-2);
+      text-decoration: underline;
+    }
 
-        .cta-buttons {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin-bottom: 24px;
-        }
+    /* --- Footer --- */
+    footer {
+      padding: 40px 0 24px;
+      background: #fafaf9;
+      border-top: 1px solid var(--border);
+      font-size: 0.875rem;
+      color: var(--muted);
+    }
 
-        .btn-large {
-            width: 100%;
-            padding: 18px 32px;
-            font-size: 1rem;
-        }
+    .footer-columns {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
 
-        .secondary-link {
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: var(--transition);
-        }
+    .footer-left {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
 
-        .secondary-link:hover {
-            color: var(--accent-2);
-            text-decoration: underline;
-        }
+    .footer-brand {
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
 
-        /* --- Footer --- */
-        footer {
-            padding: 40px 0 24px;
-            background: #fafaf9;
-            border-top: 1px solid var(--border);
-            font-size: 0.875rem;
-            color: var(--muted);
-        }
+    .footer-tagline {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
 
-        .footer-columns {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            padding-bottom: 32px;
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-        }
+    .footer-contact {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.9rem;
+      opacity: 0.85;
+      transition: opacity 0.2s ease;
+    }
 
-        .footer-left {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
+    .footer-contact:hover { opacity: 1; }
+    .footer-contact:visited { color: var(--text); }
 
-        .footer-brand {
-            font-weight: 700;
-            font-size: 0.95rem;
-            letter-spacing: 0.5px;
-            color: var(--text);
-            margin-bottom: 4px;
-        }
+    .footer-right {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
 
-        .footer-tagline {
-            font-size: 0.85rem;
-            color: var(--muted);
-            margin-bottom: 8px;
-        }
+    .footer-right a {
+      color: var(--text);
+      text-decoration: none;
+      opacity: 0.8;
+      font-size: 0.9rem;
+      transition: opacity 0.2s ease;
+    }
 
-        .footer-contact {
-            color: var(--text);
-            text-decoration: none;
-            font-size: 0.9rem;
-            opacity: 0.85;
-            transition: opacity 0.2s ease;
-        }
+    .footer-right a:hover { opacity: 1; }
+    .footer-right a:visited { color: var(--text); }
+    .footer-right a:active { color: var(--text); }
 
-        .footer-contact:hover {
-            opacity: 1;
-        }
+    .footer-compliance {
+      padding: 24px 0 20px;
+      max-width: 800px;
+    }
 
-        .footer-contact:visited {
-            color: var(--text);
-        }
+    .compliance-license {
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.6;
+      margin-bottom: 12px;
+      pointer-events: none;
+      user-select: text;
+    }
 
-        .footer-right {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            align-items: flex-start;
-        }
+    .compliance-disclaimer {
+      font-size: 0.7rem;
+      color: var(--muted);
+      opacity: 0.65;
+      line-height: 1.6;
+      pointer-events: none;
+      user-select: text;
+    }
 
-        .footer-right a {
-            color: var(--text);
-            text-decoration: none;
-            opacity: 0.8;
-            font-size: 0.9rem;
-            transition: opacity 0.2s ease;
-        }
+    .footer-copyright {
+      padding-top: 16px;
+      font-size: 0.75rem;
+      color: var(--muted);
+      opacity: 0.6;
+    }
 
-        .footer-right a:hover {
-            opacity: 1;
-        }
+    /* --- Mobile Responsiveness --- */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
 
-        .footer-right a:visited {
-            color: var(--text);
-        }
+      .thank-you-section {
+        padding: 100px 16px 60px;
+      }
 
-        .footer-right a:active {
-            color: var(--text);
-        }
+      .thank-you-card {
+        padding: 40px 32px;
+      }
 
-        .footer-compliance {
-            padding: 24px 0 20px;
-            max-width: 800px;
-        }
+      .thank-you-card h1 {
+        font-size: 1.75rem;
+      }
 
-        .compliance-license {
-            font-size: 0.75rem;
-            color: var(--muted);
-            line-height: 1.6;
-            margin-bottom: 12px;
-            pointer-events: none;
-            user-select: text;
-        }
+      .thank-you-card p {
+        font-size: 1rem;
+      }
 
-        .compliance-disclaimer {
-            font-size: 0.7rem;
-            color: var(--muted);
-            opacity: 0.65;
-            line-height: 1.6;
-            pointer-events: none;
-            user-select: text;
-        }
+      .footer-columns {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
 
-        .footer-copyright {
-            padding-top: 16px;
-            font-size: 0.75rem;
-            color: var(--muted);
-            opacity: 0.6;
-        }
-
-        /* --- Mobile Responsiveness --- */
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
-
-            .thank-you-section {
-                padding: 100px 16px 60px;
-            }
-
-            .thank-you-card {
-                padding: 40px 32px;
-            }
-
-            .thank-you-card h1 {
-                font-size: 1.75rem;
-            }
-
-            .thank-you-card p {
-                font-size: 1rem;
-            }
-
-            .footer-columns {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .footer-right a {
-                font-size: 0.9rem;
-            }
-
-            .footer-contact {
-                font-size: 0.9rem;
-            }
-        }
-    </style>
+      .footer-right a { font-size: 0.9rem; }
+      .footer-contact { font-size: 0.9rem; }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <div class="container nav-inner">
-            <a href="/" style="text-decoration: none;">
-                <div class="brand">
-                    <img src="/SilverLeafFinancialGroup.png" alt="Silver Leaf Financial Group" class="navbar-logo" />
-                    <div class="brand-text">
-                        <span class="brand-name">Ousmaan Mortgages</span>
-                        <span class="brand-tag">Strategy First</span>
-                    </div>
-                </div>
-            </a>
-            <nav class="nav-links">
-                <a href="/">Home</a>
-                <a href="tel:6477715063" class="btn btn-outline">647 771 5063</a>
-            </nav>
+  <header>
+    <div class="container nav-inner">
+      <a href="/" style="text-decoration: none;">
+        <div class="brand">
+          <img src="/SilverLeafFinancialGroup.png" alt="Silver Leaf Financial Group" class="navbar-logo" />
+          <div class="brand-text">
+            <span class="brand-name">Ousmaan Mortgages</span>
+            <span class="brand-tag">Strategy First</span>
+          </div>
         </div>
-    </header>
+      </a>
+      <nav class="nav-links">
+        <a href="/">Home</a>
+        <a href="tel:6477715063" class="btn btn-outline">647 771 5063</a>
+      </nav>
+    </div>
+  </header>
 
-    <main>
-        <section class="thank-you-section">
-            <div class="thank-you-card">
-                <div class="success-icon">&#10003;</div>
-                <h1>Request received</h1>
-                <p>Thanks for starting your mortgage strategy review. Ousmaan will review your details and follow up shortly with next steps.</p>
+  <main>
+    <section class="thank-you-section">
+      <div class="thank-you-card">
+        <div class="success-icon">&#10003;</div>
+        <h1>Request received</h1>
+        <p>Thanks for starting your mortgage strategy review. Ousmaan will review your details and follow up shortly with next steps.</p>
 
-                <div style="margin-top: 20px;">
-                    <a href="tel:6477715063" style="color: var(--muted); text-decoration: none; font-size: 0.95rem;">Or call 647 771 5063</a>
-                </div>
-
-                <div style="margin-top: 32px;">
-                    <a href="/" class="secondary-link">&larr; Back to Home</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-columns">
-                <div class="footer-left">
-                    <div class="footer-brand">OUSMAAN MORTGAGES</div>
-                    <div class="footer-tagline">Strategy First Advisory</div>
-                    <a href="tel:6477715063" class="footer-contact">647 771 5063</a>
-                    <a href="mailto:ousmaan@silverdlc.com" class="footer-contact">ousmaan@silverdlc.com</a>
-                </div>
-                <div class="footer-right">
-                    <a href="/first-time-home-buyer.html">First Time Home Buyers</a>
-                    <a href="/#renewal">Renewal</a>
-                    <a href="/#refinance">Refinance</a>
-                    <a href="/#about">About</a>
-                </div>
-            </div>
-            <div class="footer-compliance">
-                <p class="compliance-license">Ousmaan Ahmed | Mortgage Agent Level 1 | License #M25002486<br>Dominion Lending Centres | Silver Leaf Financial Group | Brokerage Licence #13415</p>
-                <p class="compliance-disclaimer">
-                    Disclaimer: This website is for informational purposes only. Information is subject to change without notice. Guaranteed approval, specific rates, or terms are not implied. All mortgage applications are subject to lender credit approval and property appraisal.
-                </p>
-            </div>
-            <div class="footer-copyright">
-                &copy; <span id="year"></span> Ousmaan Mortgages. All rights reserved.
-            </div>
+        <div style="margin-top: 20px;">
+          <a href="tel:6477715063" style="color: var(--muted); text-decoration: none; font-size: 0.95rem;">Or call 647 771 5063</a>
         </div>
-    </footer>
-    
+
+        <div style="margin-top: 32px;">
+          <a href="/" class="secondary-link">&larr; Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-left">
+          <div class="footer-brand">OUSMAAN MORTGAGES</div>
+          <div class="footer-tagline">Strategy First Advisory</div>
+          <a href="tel:6477715063" class="footer-contact">647 771 5063</a>
+          <a href="mailto:ousmaan@silverdlc.com" class="footer-contact">ousmaan@silverdlc.com</a>
+        </div>
+        <div class="footer-right">
+          <a href="/first-time-home-buyer.html">First Time Home Buyers</a>
+          <a href="/#renewal">Renewal</a>
+          <a href="/#refinance">Refinance</a>
+          <a href="/#about">About</a>
+        </div>
+      </div>
+
+      <div class="footer-compliance">
+        <p class="compliance-license">Ousmaan Ahmed | Mortgage Agent Level 1 | License #M25002486<br>Dominion Lending Centres | Silver Leaf Financial Group | Brokerage Licence #13415</p>
+        <p class="compliance-disclaimer">
+          Disclaimer: This website is for informational purposes only. Information is subject to change without notice. Guaranteed approval, specific rates, or terms are not implied. All mortgage applications are subject to lender credit approval and property appraisal.
+        </p>
+      </div>
+
+      <div class="footer-copyright">
+        &copy; <span id="year"></span> Ousmaan Mortgages. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
