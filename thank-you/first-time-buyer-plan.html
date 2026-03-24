@@ -459,15 +459,11 @@
         // Set Current Year
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        // Google Ads Conversion Tracking (if needed)
-        // This page serves as the conversion destination for Google Ads
-        if (window.gtag) {
-            window.gtag('event', 'conversion', {
-                'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL',
-                'value': 1.0,
-                'currency': 'CAD'
-            });
-        }
+        // Enhanced Conversions (future):
+        // To add Google Ads enhanced conversions, provide user-consented
+        // first-party data (email/phone) via gtag('set', 'user_data', {...})
+        // before the conversion event, and enable enhanced conversions in
+        // the Google Ads UI under the relevant conversion action.
     </script>
 </body>
 </html>
